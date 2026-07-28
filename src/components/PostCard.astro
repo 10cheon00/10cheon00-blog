@@ -1,0 +1,57 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { formatDate, getCategory, getPostDate, getPostDescription, getPostTitle, getPostUrl } from '@/lib/posts';
+
+interface Props {
+  post: CollectionEntry<'blog'>;
+}
+
+const { post } = Astro.props;
+---
+
+<article class="post-card">
+  <a class="title" href={getPostUrl(post)}>{getPostTitle(post)}</a>
+  <p>{getPostDescription(post)}</p>
+  <div class="meta">
+    <time datetime={getPostDate(post).toISOString()}>{formatDate(getPostDate(post))}</time>
+    <span>{getCategory(post)}</span>
+  </div>
+  {
+    post.data.tags?.length ? (
+      <div class="tags">
+        {post.data.tags.map((tag) => (
+          <a href={`/tags/${encodeURIComponent(tag)}/`}>#{tag}</a>
+        ))}
+      </div>
+    ) : null
+  }
+</article>
+
+<style>
+  .post-card {
+    padding: 1.15rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .title {
+    color: var(--text);
+    font-size: 1.25rem;
+    font-weight: 760;
+    line-height: 1.35;
+  }
+
+  p {
+    margin: 0.55rem 0 0;
+    color: var(--muted);
+  }
+
+  .meta,
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 0.75rem;
+    margin-top: 0.65rem;
+    color: var(--muted);
+    font-size: 0.92rem;
+  }
+</style>

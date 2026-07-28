@@ -1,0 +1,27 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { getAllCategories, getPublishedPosts } from '@/lib/posts';
+
+const categories = getAllCategories(await getPublishedPosts());
+---
+
+<BaseLayout title="분류 | 10cheon00의 Archive">
+  <section class="container page">
+    <h1>분류</h1>
+    <div class="list">
+      {categories.map((category) => <a href={`/category/${encodeURIComponent(category)}/`}>{category}</a>)}
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page {
+    padding: 2.5rem 0 4rem;
+  }
+
+  .list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.7rem;
+  }
+</style>

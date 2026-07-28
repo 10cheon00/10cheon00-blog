@@ -1,0 +1,28 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import PostCard from '@/components/PostCard.astro';
+import { getAllCategories, getCategory, getPublishedPosts } from '@/lib/posts';
+
+export async function getStaticPaths() {
+  const posts = await getPublishedPosts();
+  return getAllCategories(posts).map((category) => ({
+    params: { category },
+    props: { category, posts: posts.filter((post) => getCategory(post) === category) }
+  }));
+}
+
+const { category, posts } = Astro.props;
+---
+
+<BaseLayout title={`${category} | 10cheon00의 Archive`}>
+  <section class="container page">
+    <h1>{category}</h1>
+    {posts.map((post) => <PostCard post={post} />)}
+  </section>
+</BaseLayout>
+
+<style>
+  .page {
+    padding: 2.5rem 0 4rem;
+  }
+</style>

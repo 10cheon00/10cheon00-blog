@@ -1,0 +1,1399 @@
+<!DOCTYPE html>
+<html
+    lang="en-US"
+    class="overflow-hidden scroll-smooth tablet:overflow-x-hidden tablet:overflow-y-auto"
+>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="csrf-token" content="EMsfh9L8ku8ON2fLxp3dppfX6R54zUv4MZYAqoiN" />
+        <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <meta name="apple-mobile-web-app-title" content="Tizen Developer" />
+        <meta property="og:image" content="https://samsungtizenos.com/build/assets/og-image-HdBtcsJs.webp" />
+        <meta property="og:image:alt" content="Documentation" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <link rel="manifest" href="/site.webmanifest" />
+
+        <title>Tizen Docs - APIs, Guides, SDKs, and Tools</title>
+<meta name='robots' content='max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+	<style>img:is([sizes="auto" i], [sizes^="auto," i]) { contain-intrinsic-size: 3000px 1500px }</style>
+	<link rel="canonical" href="https://samsungtizenos.com/docs/">
+<meta name="description" content="Browse Tizen documentation for APIs, guides, SDK tools, tutorials, and development resources for web, native, .NET, and more.">
+<meta property="og:title" content="Tizen Docs - APIs, Guides, SDKs, and Tools">
+<meta property="og:type" content="article">
+<meta property="og:description" content="Browse Tizen documentation for APIs, guides, SDK tools, tutorials, and development resources for web, native, .NET, and more.">
+<meta property="og:url" content="https://samsungtizenos.com/docs/">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Tizen Developer">
+<meta property="article:published_time" content="2025-03-27T17:34:20+00:00">
+<meta property="article:modified_time" content="2026-05-18T11:42:06+00:00">
+<meta property="og:updated_time" content="2026-05-18T11:42:06+00:00">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="/content/mu-plugins/searchwp/assets/css/frontend/search-forms.min.css?ver=4.5.5"><script src="/wp/wp-includes/js/jquery/jquery.min.js?ver=3.7.1" data-navigate-once="true"></script><script src="/wp/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1" data-navigate-once="true"></script>
+        <!-- Livewire Styles --><style >[wire\:loading][wire\:loading], [wire\:loading\.delay][wire\:loading\.delay], [wire\:loading\.list-item][wire\:loading\.list-item], [wire\:loading\.inline-block][wire\:loading\.inline-block], [wire\:loading\.inline][wire\:loading\.inline], [wire\:loading\.block][wire\:loading\.block], [wire\:loading\.flex][wire\:loading\.flex], [wire\:loading\.table][wire\:loading\.table], [wire\:loading\.grid][wire\:loading\.grid], [wire\:loading\.inline-flex][wire\:loading\.inline-flex] {display: none;}[wire\:loading\.delay\.none][wire\:loading\.delay\.none], [wire\:loading\.delay\.shortest][wire\:loading\.delay\.shortest], [wire\:loading\.delay\.shorter][wire\:loading\.delay\.shorter], [wire\:loading\.delay\.short][wire\:loading\.delay\.short], [wire\:loading\.delay\.default][wire\:loading\.delay\.default], [wire\:loading\.delay\.long][wire\:loading\.delay\.long], [wire\:loading\.delay\.longer][wire\:loading\.delay\.longer], [wire\:loading\.delay\.longest][wire\:loading\.delay\.longest] {display: none;}[wire\:offline][wire\:offline] {display: none;}[wire\:dirty]:not(textarea):not(input):not(select) {display: none;}:root {--livewire-progress-bar-color: #2299dd;}[x-cloak] {display: none !important;}[wire\:cloak] {display: none !important;}dialog#livewire-error::backdrop {background-color: rgba(0, 0, 0, .6);}</style>
+        <link rel="preload" as="style" href="https://samsungtizenos.com/build/assets/app-DEHC-kPf.css" /><link rel="modulepreload" as="script" href="https://samsungtizenos.com/build/assets/app-CiEXhwMM.js" /><link rel="modulepreload" as="script" href="https://samsungtizenos.com/build/assets/livewire.esm-BxIudsAb.js" /><link rel="stylesheet" href="https://samsungtizenos.com/build/assets/app-DEHC-kPf.css" /><script type="module" src="https://samsungtizenos.com/build/assets/app-CiEXhwMM.js"></script>        
+        <script>
+            window.appCookies = window.appCookies || {}
+            window.appCookies.gtagId = 'G-SVQP5VB4RV'        </script>
+    </head>
+
+    <body
+        class="grid min-h-screen grid-rows-(--grid-rows-layout) text-gray-secondary-dark-900 dark:text-gray-primary-dark-100 selection:bg-royal-light/30 antialiased bg-white wp-singular page-template page-template-template-documentation-bridge page page-id-876 wp-embed-responsive wp-theme-tizen docs"
+    >
+        
+        <div class="sticky top-0 z-header">
+                            <header
+    id="site-header"
+    class="relative w-full bg-blue-dark-100 dark:bg-gray-secondary-dark-700/20"
+>
+    <div
+        class="hidden dark:block pointer-events-none absolute inset-0 bg-gray-secondary-dark-700/20 h-[200%] bg-(--background-navigation) mask-(--mask-background-navigation) backdrop-blur-2xl"
+    ></div>
+
+    <div
+        class="hidden dark:block pointer-events-none absolute inset-0 h-full translate-y-full bg-(--background-edge) backdrop-filter(--backdrop-edge) mask-(--mask-edge-navigation)"
+    ></div>
+
+    <div class="isolate grid grid-rows-[--spacing(12)_--spacing(12)] pt-3 px-6">
+        <div class="flex-rows mx-auto flex w-full max-w-navigation items-center">
+        <a href="https://samsungtizenos.com" class="flex items-center">
+            <div
+    class="align-center font-display text-gray-primary-dark-100 inline-flex items-center gap-1 font-bold"
+>
+    <div class="size-6">
+    <img src="https://samsungtizenos.com/build/assets/samsung-tizen-os@2x-DWi9C_5A.png" alt="" class="block size-full" />
+</div>
+
+    <p class="whitespace-nowrap text-base/6" data-dizen-heading>
+    Tizen Developer
+</p>
+</div>
+        </a>
+
+        <div
+    class="contents"
+    x-data
+    x-on:click="$el.querySelector('button[disabled]') || $dispatch('modal-show', { name: 'global-search' })"
+        data-flux-modal-trigger
+>
+    <button type="button" class="relative items-center justify-center font-bold whitespace-nowrap gap-2 disabled:pointer-events-none disabled:cursor-default text-xs h-8 px-4 rounded-[5rem] inline-flex          transition duration-200 ease-in-out ml-auto text-left font-display leading-5! font-medium! *:data-flux-icon:text-gray-primary-dark-200 border border-gray-secondary-dark-300 dark:border-gray-primary-dark-200 *:data-flux-icon:size-5!" data-flux-button="data-flux-button" data-flux-group-target="data-flux-group-target" aria-label="Search">
+        <svg
+    class="shrink-0 [:where(&amp;)]:size-4"
+    data-flux-icon
+    aria-hidden="true"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 96 96"
+    fill="currentColor"
+>
+    
+    <path d="M40.581 4.09c20.126 0 36.5 16.374 36.5 36.5a36.33 36.33 0 0 1-7.963 22.734L91.92 86.27l-5.676 5.639-22.766-22.913A36.33 36.33 0 0 1 40.58 77.09c-20.126 0-36.5-16.374-36.5-36.5s16.374-36.5 36.5-36.5m0 8c-15.715 0-28.5 12.785-28.5 28.5s12.785 28.5 28.5 28.5 28.5-12.785 28.5-28.5-12.785-28.5-28.5-28.5"/>
+    
+</svg>
+
+        
+        
+        <span class="min-w-29 translate-y-px text-gray-secondary-dark-100 dark:text-gray-primary-dark-200">
+            Search
+        </span>
+    </button>
+</div>
+
+                    <a
+                href="https://samsungtizenos.com/login"
+                class="ml-7 inline-flex h-full items-center font-display text-sm/5 font-bold text-gray-primary-dark-300 transition-colors hover:text-white"
+            >
+                <span>Sign in</span>
+            </a>
+            </div>
+
+    <div class="mx-auto w-full max-w-navigation text-white">
+        <nav class="flex items-center  h-full gap-10" data-flux-navbar>
+    <a href="https://samsungtizenos.com/about/overview/" class="flex items-center relative font-display transition after:absolute after:inset-x-0 after:bottom-0 after:h-0.5 after:bg-white after:opacity-0 after:transition hover:text-blue-crystal hover:after:bg-blue-crystal hover:after:opacity-100 data-open:text-blue-crystal data-open:after:bg-blue-crystal data-open:after:opacity-100 [--hover-fill:color-mix(in_oklab,_var(--color-accent-content),_transparent_90%)] h-full" data-flux-navbar-items="data-flux-navbar-items" wire:current="text-white after:bg-white after:opacity-100" badge:color="ghost">
+        <div class=" flex-1 text-sm/5 font-bold whitespace-nowrap [[data-nav-footer]_&]:hidden [[data-nav-sidebar]_[data-nav-footer]_&]:block" data-content>About</div>
+    </a>
+
+                                                                <a href="/products" class="flex items-center relative font-display transition after:absolute after:inset-x-0 after:bottom-0 after:h-0.5 after:bg-white after:opacity-0 after:transition hover:text-blue-crystal hover:after:bg-blue-crystal hover:after:opacity-100 data-open:text-blue-crystal data-open:after:bg-blue-crystal data-open:after:opacity-100 [--hover-fill:color-mix(in_oklab,_var(--color-accent-content),_transparent_90%)] h-full" data-flux-navbar-items="data-flux-navbar-items" wire:current="text-white after:bg-white after:opacity-100" badge:color="ghost">
+        <div class=" flex-1 text-sm/5 font-bold whitespace-nowrap [[data-nav-footer]_&]:hidden [[data-nav-sidebar]_[data-nav-footer]_&]:block" data-content>Products</div>
+    </a>
+
+                                                                <a href="https://samsungtizenos.com/tools-download/" class="flex items-center relative font-display transition after:absolute after:inset-x-0 after:bottom-0 after:h-0.5 after:bg-white after:opacity-0 after:transition hover:text-blue-crystal hover:after:bg-blue-crystal hover:after:opacity-100 data-open:text-blue-crystal data-open:after:bg-blue-crystal data-open:after:opacity-100 [--hover-fill:color-mix(in_oklab,_var(--color-accent-content),_transparent_90%)] h-full" data-flux-navbar-items="data-flux-navbar-items" wire:current="text-white after:bg-white after:opacity-100" badge:color="ghost">
+        <div class=" flex-1 text-sm/5 font-bold whitespace-nowrap [[data-nav-footer]_&]:hidden [[data-nav-sidebar]_[data-nav-footer]_&]:block" data-content>Tools</div>
+    </a>
+
+                                                                <ui-dropdown position="bottom start" offset="0" gap="0" hover="hover" class="h-full" data-flux-dropdown>
+    <a href="/docs" data-current="data-current" class="flex items-center relative font-display transition after:absolute after:inset-x-0 after:bottom-0 after:h-0.5 after:bg-white after:opacity-0 after:transition hover:text-blue-crystal hover:after:bg-blue-crystal hover:after:opacity-100 data-open:text-blue-crystal data-open:after:bg-blue-crystal data-open:after:opacity-100 [--hover-fill:color-mix(in_oklab,_var(--color-accent-content),_transparent_90%)] h-full" data-flux-navbar-items="data-flux-navbar-items" wire:current="text-white! after:bg-white! after:opacity-100">
+        <div class=" flex-1 text-sm/5 font-bold whitespace-nowrap [[data-nav-footer]_&]:hidden [[data-nav-sidebar]_[data-nav-footer]_&]:block" data-content>Docs</div>
+    </a>
+
+
+    <nav class="left-0! w-full     text-white opacity-0  border-b border-b-gray-secondary-dark-300 dark:border-t dark:border-t-white/10 dark:border-b-white/10 bg-blue-dark-100 dark:dark:bg-gray-secondary-dark-700/20 backdrop-blur-[80px] transition transition-discrete duration-300 open:opacity-100 starting:open:opacity-0" popover="manual" data-flux-navmenu>
+    <div class="relative size-full overflow-hidden px-6 py-8">
+            <div
+                class="hidden dark:block pointer-events-none absolute inset-0 transition-discrete backdrop-blur-[80px] h-[200%] bg-(--background-navigation) mask-(--mask-background-navigation)"
+            ></div>
+
+            <div
+                class="hidden dark:block pointer-events-none absolute inset-0 h-full translate-y-full bg-(--background-edge) backdrop-filter(--backdrop-edge) mask-(--mask-edge-navigation)"
+            ></div>
+
+            <div class="isolate mx-auto flex w-full max-w-navigation gap-10">
+                
+                                                            <nav class="flex flex-col min-h-auto overflow-visible min-w-27 font-display" data-flux-navlist>
+    <div class="block space-y-3">
+        <div class="text-sm/4 font-bold font-display text-gray-primary-dark-100">Platform</div>
+
+        <div>
+            <a href="/docs/platform/hal/overview" class="relative flex h-10 items-center gap-3 rounded-lg lg:h-8  w-full text-start text-gray-primary-dark-400 transition-colors hover:text-white dark:text-white/80 dark:hover:text-white data-current:text-white" data-flux-navlist-item="data-flux-navlist-item">
+        <div class="flex-1 text-sm/4 font-medium whitespace-nowrap [[data-nav-footer]_&]:hidden [[data-nav-sidebar]_[data-nav-footer]_&]:block" data-content>HAL</div>
+    </a>
+        </div>
+    </div>
+</nav>
+                                                                                <nav class="flex flex-col min-h-auto overflow-visible min-w-27 font-display" data-flux-navlist>
+    <div class="block space-y-3">
+        <div class="text-sm/4 font-bold font-display text-gray-primary-dark-100">SDK/Tools</div>
+
+        <div>
+            <a href="/docs/sdk-tools/dotnet/vscode/tizen-studio/common-tools/overview" class="relative flex h-10 items-center gap-3 rounded-lg lg:h-8  w-full text-start text-gray-primary-dark-400 transition-colors hover:text-white dark:text-white/80 dark:hover:text-white data-current:text-white" data-flux-navlist-item="data-flux-navlist-item">
+        <div class="flex-1 text-sm/4 font-medium whitespace-nowrap [[data-nav-footer]_&]:hidden [[data-nav-sidebar]_[data-nav-footer]_&]:block" data-content>VS Code Extension</div>
+    </a>
+
+                                                            <a href="/docs/sdk-tools/dotnet/visual-studio/tizen-studio/common-tools/overview" class="relative flex h-10 items-center gap-3 rounded-lg lg:h-8  w-full text-start text-gray-primary-dark-400 transition-colors hover:text-white dark:text-white/80 dark:hover:text-white data-current:text-white" data-flux-navlist-item="data-flux-navlist-item">
+        <div class="flex-1 text-sm/4 font-medium whitespace-nowrap [[data-nav-footer]_&]:hidden [[data-nav-sidebar]_[data-nav-footer]_&]:block" data-content>Visual Studio</div>
+    </a>
+        </div>
+    </div>
+</nav>
+                                                                                <nav class="flex flex-col min-h-auto overflow-visible min-w-27 font-display" data-flux-navlist>
+    <div class="block space-y-3">
+        <div class="text-sm/4 font-bold font-display text-gray-primary-dark-100">Application</div>
+
+        <div>
+            <a href="/docs/application/dotnet/overview" class="relative flex h-10 items-center gap-3 rounded-lg lg:h-8  w-full text-start text-gray-primary-dark-400 transition-colors hover:text-white dark:text-white/80 dark:hover:text-white data-current:text-white" data-flux-navlist-item="data-flux-navlist-item">
+        <div class="flex-1 text-sm/4 font-medium whitespace-nowrap [[data-nav-footer]_&]:hidden [[data-nav-sidebar]_[data-nav-footer]_&]:block" data-content>.NET</div>
+    </a>
+
+                                                            <a href="/docs/application/native/overview" class="relative flex h-10 items-center gap-3 rounded-lg lg:h-8  w-full text-start text-gray-primary-dark-400 transition-colors hover:text-white dark:text-white/80 dark:hover:text-white data-current:text-white" data-flux-navlist-item="data-flux-navlist-item">
+        <div class="flex-1 text-sm/4 font-medium whitespace-nowrap [[data-nav-footer]_&]:hidden [[data-nav-sidebar]_[data-nav-footer]_&]:block" data-content>Native</div>
+    </a>
+
+                                                            <a href="/docs/application/web/overview" class="relative flex h-10 items-center gap-3 rounded-lg lg:h-8  w-full text-start text-gray-primary-dark-400 transition-colors hover:text-white dark:text-white/80 dark:hover:text-white data-current:text-white" data-flux-navlist-item="data-flux-navlist-item">
+        <div class="flex-1 text-sm/4 font-medium whitespace-nowrap [[data-nav-footer]_&]:hidden [[data-nav-sidebar]_[data-nav-footer]_&]:block" data-content>Web</div>
+    </a>
+
+                                                            <a href="/docs/application/flutter/overview" class="relative flex h-10 items-center gap-3 rounded-lg lg:h-8  w-full text-start text-gray-primary-dark-400 transition-colors hover:text-white dark:text-white/80 dark:hover:text-white data-current:text-white" data-flux-navlist-item="data-flux-navlist-item">
+        <div class="flex-1 text-sm/4 font-medium whitespace-nowrap [[data-nav-footer]_&]:hidden [[data-nav-sidebar]_[data-nav-footer]_&]:block" data-content>Flutter</div>
+    </a>
+        </div>
+    </div>
+</nav>
+                                                                                <nav class="flex flex-col min-h-auto overflow-visible min-w-27 font-display" data-flux-navlist>
+    <div class="block space-y-3">
+        <div class="text-sm/4 font-bold font-display text-gray-primary-dark-100">Extension</div>
+
+        <div>
+            <a href="/docs/extensions/tizenx/overview" class="relative flex h-10 items-center gap-3 rounded-lg lg:h-8  w-full text-start text-gray-primary-dark-400 transition-colors hover:text-white dark:text-white/80 dark:hover:text-white data-current:text-white" data-flux-navlist-item="data-flux-navlist-item">
+        <div class="flex-1 text-sm/4 font-medium whitespace-nowrap [[data-nav-footer]_&]:hidden [[data-nav-sidebar]_[data-nav-footer]_&]:block" data-content>TizenX</div>
+    </a>
+        </div>
+    </div>
+</nav>
+                                                                                                                    <nav class="flex flex-col min-h-auto overflow-visible min-w-27 font-display" data-flux-navlist>
+    <div class="block space-y-3">
+        <div class="text-sm/4 font-bold font-display text-gray-primary-dark-100">Misc</div>
+
+        <div>
+            <a href="/docs/misc/feature" class="relative flex h-10 items-center gap-3 rounded-lg lg:h-8  w-full text-start text-gray-primary-dark-400 transition-colors hover:text-white dark:text-white/80 dark:hover:text-white data-current:text-white" data-flux-navlist-item="data-flux-navlist-item">
+        <div class="flex-1 text-sm/4 font-medium whitespace-nowrap [[data-nav-footer]_&]:hidden [[data-nav-sidebar]_[data-nav-footer]_&]:block" data-content>Feature</div>
+    </a>
+
+                                                            <a href="/docs/misc/privilege" class="relative flex h-10 items-center gap-3 rounded-lg lg:h-8  w-full text-start text-gray-primary-dark-400 transition-colors hover:text-white dark:text-white/80 dark:hover:text-white data-current:text-white" data-flux-navlist-item="data-flux-navlist-item">
+        <div class="flex-1 text-sm/4 font-medium whitespace-nowrap [[data-nav-footer]_&]:hidden [[data-nav-sidebar]_[data-nav-footer]_&]:block" data-content>Privilege</div>
+    </a>
+
+                                                            <a href="/docs/misc/runtime" class="relative flex h-10 items-center gap-3 rounded-lg lg:h-8  w-full text-start text-gray-primary-dark-400 transition-colors hover:text-white dark:text-white/80 dark:hover:text-white data-current:text-white" data-flux-navlist-item="data-flux-navlist-item">
+        <div class="flex-1 text-sm/4 font-medium whitespace-nowrap [[data-nav-footer]_&]:hidden [[data-nav-sidebar]_[data-nav-footer]_&]:block" data-content>Runtime</div>
+    </a>
+
+                                                            <a href="/docs/misc/setting" class="relative flex h-10 items-center gap-3 rounded-lg lg:h-8  w-full text-start text-gray-primary-dark-400 transition-colors hover:text-white dark:text-white/80 dark:hover:text-white data-current:text-white" data-flux-navlist-item="data-flux-navlist-item">
+        <div class="flex-1 text-sm/4 font-medium whitespace-nowrap [[data-nav-footer]_&]:hidden [[data-nav-sidebar]_[data-nav-footer]_&]:block" data-content>Setting</div>
+    </a>
+
+                                                            <a href="/docs/misc/system" class="relative flex h-10 items-center gap-3 rounded-lg lg:h-8  w-full text-start text-gray-primary-dark-400 transition-colors hover:text-white dark:text-white/80 dark:hover:text-white data-current:text-white" data-flux-navlist-item="data-flux-navlist-item">
+        <div class="flex-1 text-sm/4 font-medium whitespace-nowrap [[data-nav-footer]_&]:hidden [[data-nav-sidebar]_[data-nav-footer]_&]:block" data-content>System</div>
+    </a>
+        </div>
+    </div>
+</nav>
+                                                </div>
+        </div>
+</nav>
+</ui-dropdown>
+                                                                <a href="https://samsungtizenos.com/blog/" class="flex items-center relative font-display transition after:absolute after:inset-x-0 after:bottom-0 after:h-0.5 after:bg-white after:opacity-0 after:transition hover:text-blue-crystal hover:after:bg-blue-crystal hover:after:opacity-100 data-open:text-blue-crystal data-open:after:bg-blue-crystal data-open:after:opacity-100 [--hover-fill:color-mix(in_oklab,_var(--color-accent-content),_transparent_90%)] h-full" data-flux-navbar-items="data-flux-navbar-items" wire:current="text-white after:bg-white after:opacity-100" badge:color="ghost">
+        <div class=" flex-1 text-sm/5 font-bold whitespace-nowrap [[data-nav-footer]_&]:hidden [[data-nav-sidebar]_[data-nav-footer]_&]:block" data-content>Blog</div>
+    </a>
+
+                                                                <a href="/knowledge-hub" class="flex items-center relative font-display transition after:absolute after:inset-x-0 after:bottom-0 after:h-0.5 after:bg-white after:opacity-0 after:transition hover:text-blue-crystal hover:after:bg-blue-crystal hover:after:opacity-100 data-open:text-blue-crystal data-open:after:bg-blue-crystal data-open:after:opacity-100 [--hover-fill:color-mix(in_oklab,_var(--color-accent-content),_transparent_90%)] h-full" data-flux-navbar-items="data-flux-navbar-items" wire:current="text-white after:bg-white after:opacity-100" badge:color="ghost">
+        <div class=" flex-1 text-sm/5 font-bold whitespace-nowrap [[data-nav-footer]_&]:hidden [[data-nav-sidebar]_[data-nav-footer]_&]:block" data-content>Knowledge Hub</div>
+    </a>
+
+                                                                <a href="/release-notes" class="flex items-center relative font-display transition after:absolute after:inset-x-0 after:bottom-0 after:h-0.5 after:bg-white after:opacity-0 after:transition hover:text-blue-crystal hover:after:bg-blue-crystal hover:after:opacity-100 data-open:text-blue-crystal data-open:after:bg-blue-crystal data-open:after:opacity-100 [--hover-fill:color-mix(in_oklab,_var(--color-accent-content),_transparent_90%)] h-full" data-flux-navbar-items="data-flux-navbar-items" wire:current="text-white after:bg-white after:opacity-100" badge:color="ghost">
+        <div class=" flex-1 text-sm/5 font-bold whitespace-nowrap [[data-nav-footer]_&]:hidden [[data-nav-sidebar]_[data-nav-footer]_&]:block" data-content>Release Notes</div>
+    </a>
+</nav>
+    </div>
+    </div>
+</header>
+
+                                    </div>
+
+        <main id="site-main" x-data>
+            <div
+    class="pt-10 tablet:pt-15 pb-30 px-4 tablet:px-6 pb-13.5! tablet:pb-25!"
+>
+    <div class="mx-auto max-w-common">
+            <h1 class="mb-8 font-display text-7xl font-bold tablet:mb-13 tablet:text-12xl">
+                Documentation
+            </h1>
+
+            <div class="mb-18 tablet:mb-20">
+    <div class="relative mb-1">
+        <span
+            aria-hidden="true"
+            class="absolute h-full w-0.5 tablet:w-1 bg-linear-to-b from-purplish to-royal-light"
+        ></span>
+
+        <h2
+            class="relative ms-3 flex items-center font-display text-2xl/7.5 font-bold text-gray-primary-light-500 tablet:ms-4 tablet:text-3xl/7.5"
+        >
+            Platform
+
+                    </h2>
+    </div>
+
+    <p class="ms-3 mb-6 text-sm/5 text-gray-primary-light-200 tablet:ms-4 tablet:text-base/6">
+        
+    </p>
+
+    <div>
+        <div
+    class="relative rounded-[14px] hover:shadow-feature-card transform-gpu transition-all duration-500 overflow-hidden -m-0.5 p-0.5 before:-z-10 before:absolute before:inset-0 before:bg-gradient-to-r before:from-purplish before:from-0% before:to-royal-light before:to-80% before:opacity-0 before:transition-opacity before:duration-500 hover:before:opacity-100"
+    data-gradient-hover-wrapper
+>
+    <div
+        class="group relative flex h-full flex-col items-start rounded-xl border border-gray-secondary-light-400 bg-gray-secondary-light-50 p-6 tablet:p-8"
+    >
+                    <h3 class="mb-2 font-display text-base/5.5 font-bold text-gray-primary-light-500 tablet:text-2xl/7.5">
+                
+                HAL
+            </h3>
+        
+        <p class="mb-5 flex-1 text-sm/5 text-gray-primary-light-500 tablet:mb-6 tablet:text-base/6">
+            The Tizen HAL (Hardware Abstraction Layer) provides a standardized interface for hardware-specific functionalities, enabling seamless integration and compatibility across diverse devices.
+        </p>
+
+        <a class="inline font-medium underline-offset-[6px] hover:decoration-current underline [[data-color]&gt;&amp;]:text-inherit [[data-color]&gt;&amp;]:decoration-current/20 dark:[[data-color]&gt;&amp;]:decoration-current/50 [[data-color]&gt;&amp;]:hover:decoration-current text-[var(--color-accent-content)] decoration-[color-mix(in_oklab,var(--color-accent-content),transparent_80%)] text-xs/6 inline-flex! items-center gap-1 font-sans font-semibold text-gray-primary-light-600 no-underline!" href="/docs/platform/hal/overview" data-flux-link ><span class="absolute inset-0"></span>
+
+            <span class="relative overflow-hidden">
+                <span
+                    class="absolute bottom-px left-0 h-0.5 w-full -translate-x-full transform-gpu bg-gray-primary-light-600 transition-transform duration-200 ease-linear will-change-transform group-hover:translate-x-0"
+                ></span>
+
+                Read the Docs
+            </span>
+
+            <svg
+    class="shrink-0 [:where(&amp;)]:size-6 size-4"
+    data-flux-icon
+    aria-hidden="true"
+    xmlns="http://www.w3.org/2000/svg"
+    fill="currentColor"
+    viewBox="0 0 64 64"
+>
+    <path d="m23.837 56.26-3.688-3.853L41.47 32 20.15 11.593l3.687-3.853L49.183 32 23.837 56.26Z" />
+</svg></a>    </div>
+</div>
+    </div>
+</div>
+
+            <div class="mb-18 tablet:mb-20">
+    <div class="relative mb-1">
+        <span
+            aria-hidden="true"
+            class="absolute h-full w-0.5 tablet:w-1 bg-linear-to-b from-purplish to-royal-light"
+        ></span>
+
+        <h2
+            class="relative ms-3 flex items-center font-display text-2xl/7.5 font-bold text-gray-primary-light-500 tablet:ms-4 tablet:text-3xl/7.5"
+        >
+            SDK/Tools
+
+                    </h2>
+    </div>
+
+    <p class="ms-3 mb-6 text-sm/5 text-gray-primary-light-200 tablet:ms-4 tablet:text-base/6">
+        
+    </p>
+
+    <div>
+        <div class="grid grid-cols-2 gap-7">
+                    <div
+    class="relative rounded-[14px] hover:shadow-feature-card transform-gpu transition-all duration-500 overflow-hidden -m-0.5 p-0.5 before:-z-10 before:absolute before:inset-0 before:bg-gradient-to-r before:from-purplish before:from-0% before:to-royal-light before:to-80% before:opacity-0 before:transition-opacity before:duration-500 hover:before:opacity-100"
+    data-gradient-hover-wrapper
+>
+    <div
+        class="group relative flex h-full flex-col items-start rounded-xl border border-gray-secondary-light-400 bg-gray-secondary-light-50 p-6 tablet:p-8"
+    >
+                    <h3 class="mb-2 font-display text-base/5.5 font-bold text-gray-primary-light-500 tablet:text-2xl/7.5">
+                
+                VS Code extension
+            </h3>
+        
+        <p class="mb-5 flex-1 text-sm/5 text-gray-primary-light-500 tablet:mb-6 tablet:text-base/6">
+            Visual Studio Code Extension for Tizen enables you to develop Tizen .NET, Web and Navtive applications easily using Visual Studio Code on any OSs.
+        </p>
+
+        <a class="inline font-medium underline-offset-[6px] hover:decoration-current underline [[data-color]&gt;&amp;]:text-inherit [[data-color]&gt;&amp;]:decoration-current/20 dark:[[data-color]&gt;&amp;]:decoration-current/50 [[data-color]&gt;&amp;]:hover:decoration-current text-[var(--color-accent-content)] decoration-[color-mix(in_oklab,var(--color-accent-content),transparent_80%)] text-xs/6 inline-flex! items-center gap-1 font-sans font-semibold text-gray-primary-light-600 no-underline!" href="/docs/sdk-tools/dotnet/vscode/tizen-studio/common-tools/overview" data-flux-link ><span class="absolute inset-0"></span>
+
+            <span class="relative overflow-hidden">
+                <span
+                    class="absolute bottom-px left-0 h-0.5 w-full -translate-x-full transform-gpu bg-gray-primary-light-600 transition-transform duration-200 ease-linear will-change-transform group-hover:translate-x-0"
+                ></span>
+
+                Read the Docs
+            </span>
+
+            <svg
+    class="shrink-0 [:where(&amp;)]:size-6 size-4"
+    data-flux-icon
+    aria-hidden="true"
+    xmlns="http://www.w3.org/2000/svg"
+    fill="currentColor"
+    viewBox="0 0 64 64"
+>
+    <path d="m23.837 56.26-3.688-3.853L41.47 32 20.15 11.593l3.687-3.853L49.183 32 23.837 56.26Z" />
+</svg></a>    </div>
+</div>
+
+                    <div
+    class="relative rounded-[14px] hover:shadow-feature-card transform-gpu transition-all duration-500 overflow-hidden -m-0.5 p-0.5 before:-z-10 before:absolute before:inset-0 before:bg-gradient-to-r before:from-purplish before:from-0% before:to-royal-light before:to-80% before:opacity-0 before:transition-opacity before:duration-500 hover:before:opacity-100"
+    data-gradient-hover-wrapper
+>
+    <div
+        class="group relative flex h-full flex-col items-start rounded-xl border border-gray-secondary-light-400 bg-gray-secondary-light-50 p-6 tablet:p-8"
+    >
+                    <h3 class="mb-2 font-display text-base/5.5 font-bold text-gray-primary-light-500 tablet:text-2xl/7.5">
+                
+                Visual Studio
+            </h3>
+        
+        <p class="mb-5 flex-1 text-sm/5 text-gray-primary-light-500 tablet:mb-6 tablet:text-base/6">
+            Visual Studio Tools for Tizen provides Tizen-specific tools to develop Tizen .NET applications effectively.
+        </p>
+
+        <a class="inline font-medium underline-offset-[6px] hover:decoration-current underline [[data-color]&gt;&amp;]:text-inherit [[data-color]&gt;&amp;]:decoration-current/20 dark:[[data-color]&gt;&amp;]:decoration-current/50 [[data-color]&gt;&amp;]:hover:decoration-current text-[var(--color-accent-content)] decoration-[color-mix(in_oklab,var(--color-accent-content),transparent_80%)] text-xs/6 inline-flex! items-center gap-1 font-sans font-semibold text-gray-primary-light-600 no-underline!" href="/docs/sdk-tools/dotnet/visual-studio/tizen-studio/common-tools/overview" data-flux-link ><span class="absolute inset-0"></span>
+
+            <span class="relative overflow-hidden">
+                <span
+                    class="absolute bottom-px left-0 h-0.5 w-full -translate-x-full transform-gpu bg-gray-primary-light-600 transition-transform duration-200 ease-linear will-change-transform group-hover:translate-x-0"
+                ></span>
+
+                Read the Docs
+            </span>
+
+            <svg
+    class="shrink-0 [:where(&amp;)]:size-6 size-4"
+    data-flux-icon
+    aria-hidden="true"
+    xmlns="http://www.w3.org/2000/svg"
+    fill="currentColor"
+    viewBox="0 0 64 64"
+>
+    <path d="m23.837 56.26-3.688-3.853L41.47 32 20.15 11.593l3.687-3.853L49.183 32 23.837 56.26Z" />
+</svg></a>    </div>
+</div>
+                </div>
+    </div>
+</div>
+
+            <div class="mb-18 tablet:mb-20">
+    <div class="relative mb-1">
+        <span
+            aria-hidden="true"
+            class="absolute h-full w-0.5 tablet:w-1 bg-linear-to-b from-purplish to-royal-light"
+        ></span>
+
+        <h2
+            class="relative ms-3 flex items-center font-display text-2xl/7.5 font-bold text-gray-primary-light-500 tablet:ms-4 tablet:text-3xl/7.5"
+        >
+            Application
+
+                    </h2>
+    </div>
+
+    <p class="ms-3 mb-6 text-sm/5 text-gray-primary-light-200 tablet:ms-4 tablet:text-base/6">
+        
+    </p>
+
+    <div>
+        <div class="grid grid-cols-3 gap-7">
+                    <div
+    class="relative rounded-[14px] hover:shadow-feature-card transform-gpu transition-all duration-500 overflow-hidden -m-0.5 p-0.5 before:-z-10 before:absolute before:inset-0 before:bg-gradient-to-r before:from-purplish before:from-0% before:to-royal-light before:to-80% before:opacity-0 before:transition-opacity before:duration-500 hover:before:opacity-100"
+    data-gradient-hover-wrapper
+>
+    <div
+        class="group relative flex h-full flex-col items-start rounded-xl border border-gray-secondary-light-400 bg-gray-secondary-light-50 p-6 tablet:p-8"
+    >
+                    <h3 class="mb-2 font-display text-base/5.5 font-bold text-gray-primary-light-500 tablet:text-2xl/7.5">
+                
+                .NET
+            </h3>
+        
+        <p class="mb-5 flex-1 text-sm/5 text-gray-primary-light-500 tablet:mb-6 tablet:text-base/6">
+            API reference and guides for Tizen .NET Application development.
+        </p>
+
+        <a class="inline font-medium underline-offset-[6px] hover:decoration-current underline [[data-color]&gt;&amp;]:text-inherit [[data-color]&gt;&amp;]:decoration-current/20 dark:[[data-color]&gt;&amp;]:decoration-current/50 [[data-color]&gt;&amp;]:hover:decoration-current text-[var(--color-accent-content)] decoration-[color-mix(in_oklab,var(--color-accent-content),transparent_80%)] text-xs/6 inline-flex! items-center gap-1 font-sans font-semibold text-gray-primary-light-600 no-underline!" href="/docs/application/dotnet/overview" data-flux-link ><span class="absolute inset-0"></span>
+
+            <span class="relative overflow-hidden">
+                <span
+                    class="absolute bottom-px left-0 h-0.5 w-full -translate-x-full transform-gpu bg-gray-primary-light-600 transition-transform duration-200 ease-linear will-change-transform group-hover:translate-x-0"
+                ></span>
+
+                Read the Docs
+            </span>
+
+            <svg
+    class="shrink-0 [:where(&amp;)]:size-6 size-4"
+    data-flux-icon
+    aria-hidden="true"
+    xmlns="http://www.w3.org/2000/svg"
+    fill="currentColor"
+    viewBox="0 0 64 64"
+>
+    <path d="m23.837 56.26-3.688-3.853L41.47 32 20.15 11.593l3.687-3.853L49.183 32 23.837 56.26Z" />
+</svg></a>    </div>
+</div>
+
+                    <div
+    class="relative rounded-[14px] hover:shadow-feature-card transform-gpu transition-all duration-500 overflow-hidden -m-0.5 p-0.5 before:-z-10 before:absolute before:inset-0 before:bg-gradient-to-r before:from-purplish before:from-0% before:to-royal-light before:to-80% before:opacity-0 before:transition-opacity before:duration-500 hover:before:opacity-100"
+    data-gradient-hover-wrapper
+>
+    <div
+        class="group relative flex h-full flex-col items-start rounded-xl border border-gray-secondary-light-400 bg-gray-secondary-light-50 p-6 tablet:p-8"
+    >
+                    <h3 class="mb-2 font-display text-base/5.5 font-bold text-gray-primary-light-500 tablet:text-2xl/7.5">
+                
+                Native
+            </h3>
+        
+        <p class="mb-5 flex-1 text-sm/5 text-gray-primary-light-500 tablet:mb-6 tablet:text-base/6">
+            API reference and guides for Tizen Native Application development.
+        </p>
+
+        <a class="inline font-medium underline-offset-[6px] hover:decoration-current underline [[data-color]&gt;&amp;]:text-inherit [[data-color]&gt;&amp;]:decoration-current/20 dark:[[data-color]&gt;&amp;]:decoration-current/50 [[data-color]&gt;&amp;]:hover:decoration-current text-[var(--color-accent-content)] decoration-[color-mix(in_oklab,var(--color-accent-content),transparent_80%)] text-xs/6 inline-flex! items-center gap-1 font-sans font-semibold text-gray-primary-light-600 no-underline!" href="/docs/application/native/overview" data-flux-link ><span class="absolute inset-0"></span>
+
+            <span class="relative overflow-hidden">
+                <span
+                    class="absolute bottom-px left-0 h-0.5 w-full -translate-x-full transform-gpu bg-gray-primary-light-600 transition-transform duration-200 ease-linear will-change-transform group-hover:translate-x-0"
+                ></span>
+
+                Read the Docs
+            </span>
+
+            <svg
+    class="shrink-0 [:where(&amp;)]:size-6 size-4"
+    data-flux-icon
+    aria-hidden="true"
+    xmlns="http://www.w3.org/2000/svg"
+    fill="currentColor"
+    viewBox="0 0 64 64"
+>
+    <path d="m23.837 56.26-3.688-3.853L41.47 32 20.15 11.593l3.687-3.853L49.183 32 23.837 56.26Z" />
+</svg></a>    </div>
+</div>
+
+                    <div
+    class="relative rounded-[14px] hover:shadow-feature-card transform-gpu transition-all duration-500 overflow-hidden -m-0.5 p-0.5 before:-z-10 before:absolute before:inset-0 before:bg-gradient-to-r before:from-purplish before:from-0% before:to-royal-light before:to-80% before:opacity-0 before:transition-opacity before:duration-500 hover:before:opacity-100"
+    data-gradient-hover-wrapper
+>
+    <div
+        class="group relative flex h-full flex-col items-start rounded-xl border border-gray-secondary-light-400 bg-gray-secondary-light-50 p-6 tablet:p-8"
+    >
+                    <h3 class="mb-2 font-display text-base/5.5 font-bold text-gray-primary-light-500 tablet:text-2xl/7.5">
+                
+                Web
+            </h3>
+        
+        <p class="mb-5 flex-1 text-sm/5 text-gray-primary-light-500 tablet:mb-6 tablet:text-base/6">
+            API reference and guides for Tizen Web Application development.
+        </p>
+
+        <a class="inline font-medium underline-offset-[6px] hover:decoration-current underline [[data-color]&gt;&amp;]:text-inherit [[data-color]&gt;&amp;]:decoration-current/20 dark:[[data-color]&gt;&amp;]:decoration-current/50 [[data-color]&gt;&amp;]:hover:decoration-current text-[var(--color-accent-content)] decoration-[color-mix(in_oklab,var(--color-accent-content),transparent_80%)] text-xs/6 inline-flex! items-center gap-1 font-sans font-semibold text-gray-primary-light-600 no-underline!" href="/docs/application/web/overview" data-flux-link ><span class="absolute inset-0"></span>
+
+            <span class="relative overflow-hidden">
+                <span
+                    class="absolute bottom-px left-0 h-0.5 w-full -translate-x-full transform-gpu bg-gray-primary-light-600 transition-transform duration-200 ease-linear will-change-transform group-hover:translate-x-0"
+                ></span>
+
+                Read the Docs
+            </span>
+
+            <svg
+    class="shrink-0 [:where(&amp;)]:size-6 size-4"
+    data-flux-icon
+    aria-hidden="true"
+    xmlns="http://www.w3.org/2000/svg"
+    fill="currentColor"
+    viewBox="0 0 64 64"
+>
+    <path d="m23.837 56.26-3.688-3.853L41.47 32 20.15 11.593l3.687-3.853L49.183 32 23.837 56.26Z" />
+</svg></a>    </div>
+</div>
+
+                    <div
+    class="relative rounded-[14px] hover:shadow-feature-card transform-gpu transition-all duration-500 overflow-hidden -m-0.5 p-0.5 before:-z-10 before:absolute before:inset-0 before:bg-gradient-to-r before:from-purplish before:from-0% before:to-royal-light before:to-80% before:opacity-0 before:transition-opacity before:duration-500 hover:before:opacity-100"
+    data-gradient-hover-wrapper
+>
+    <div
+        class="group relative flex h-full flex-col items-start rounded-xl border border-gray-secondary-light-400 bg-gray-secondary-light-50 p-6 tablet:p-8"
+    >
+                    <h3 class="mb-2 font-display text-base/5.5 font-bold text-gray-primary-light-500 tablet:text-2xl/7.5">
+                
+                Flutter
+            </h3>
+        
+        <p class="mb-5 flex-1 text-sm/5 text-gray-primary-light-500 tablet:mb-6 tablet:text-base/6">
+            API reference and guides for Flutter Application development.
+        </p>
+
+        <a class="inline font-medium underline-offset-[6px] hover:decoration-current underline [[data-color]&gt;&amp;]:text-inherit [[data-color]&gt;&amp;]:decoration-current/20 dark:[[data-color]&gt;&amp;]:decoration-current/50 [[data-color]&gt;&amp;]:hover:decoration-current text-[var(--color-accent-content)] decoration-[color-mix(in_oklab,var(--color-accent-content),transparent_80%)] text-xs/6 inline-flex! items-center gap-1 font-sans font-semibold text-gray-primary-light-600 no-underline!" href="/docs/application/flutter/overview" data-flux-link ><span class="absolute inset-0"></span>
+
+            <span class="relative overflow-hidden">
+                <span
+                    class="absolute bottom-px left-0 h-0.5 w-full -translate-x-full transform-gpu bg-gray-primary-light-600 transition-transform duration-200 ease-linear will-change-transform group-hover:translate-x-0"
+                ></span>
+
+                Read the Docs
+            </span>
+
+            <svg
+    class="shrink-0 [:where(&amp;)]:size-6 size-4"
+    data-flux-icon
+    aria-hidden="true"
+    xmlns="http://www.w3.org/2000/svg"
+    fill="currentColor"
+    viewBox="0 0 64 64"
+>
+    <path d="m23.837 56.26-3.688-3.853L41.47 32 20.15 11.593l3.687-3.853L49.183 32 23.837 56.26Z" />
+</svg></a>    </div>
+</div>
+
+                                    </div>
+    </div>
+</div>
+
+            <div class="mb-18 tablet:mb-20">
+    <div class="relative mb-1">
+        <span
+            aria-hidden="true"
+            class="absolute h-full w-0.5 tablet:w-1 bg-linear-to-b from-purplish to-royal-light"
+        ></span>
+
+        <h2
+            class="relative ms-3 flex items-center font-display text-2xl/7.5 font-bold text-gray-primary-light-500 tablet:ms-4 tablet:text-3xl/7.5"
+        >
+            Extension
+
+                    </h2>
+    </div>
+
+    <p class="ms-3 mb-6 text-sm/5 text-gray-primary-light-200 tablet:ms-4 tablet:text-base/6">
+        
+    </p>
+
+    <div>
+        <div
+    class="relative rounded-[14px] hover:shadow-feature-card transform-gpu transition-all duration-500 overflow-hidden -m-0.5 p-0.5 before:-z-10 before:absolute before:inset-0 before:bg-gradient-to-r before:from-purplish before:from-0% before:to-royal-light before:to-80% before:opacity-0 before:transition-opacity before:duration-500 hover:before:opacity-100"
+    data-gradient-hover-wrapper
+>
+    <div
+        class="group relative flex h-full flex-col items-start rounded-xl border border-gray-secondary-light-400 bg-gray-secondary-light-50 p-6 tablet:p-8"
+    >
+                    <h3 class="mb-2 font-display text-base/5.5 font-bold text-gray-primary-light-500 tablet:text-2xl/7.5">
+                
+                TizenX
+            </h3>
+        
+        <p class="mb-5 flex-1 text-sm/5 text-gray-primary-light-500 tablet:mb-6 tablet:text-base/6">
+            The Tizen eXtension Library(TizenX) is a collection of modular,  open-source C# libraries that enhance and extend the Tizen platform
+        </p>
+
+        <a class="inline font-medium underline-offset-[6px] hover:decoration-current underline [[data-color]&gt;&amp;]:text-inherit [[data-color]&gt;&amp;]:decoration-current/20 dark:[[data-color]&gt;&amp;]:decoration-current/50 [[data-color]&gt;&amp;]:hover:decoration-current text-[var(--color-accent-content)] decoration-[color-mix(in_oklab,var(--color-accent-content),transparent_80%)] text-xs/6 inline-flex! items-center gap-1 font-sans font-semibold text-gray-primary-light-600 no-underline!" href="/docs/extensions/tizenx/overview" data-flux-link ><span class="absolute inset-0"></span>
+
+            <span class="relative overflow-hidden">
+                <span
+                    class="absolute bottom-px left-0 h-0.5 w-full -translate-x-full transform-gpu bg-gray-primary-light-600 transition-transform duration-200 ease-linear will-change-transform group-hover:translate-x-0"
+                ></span>
+
+                Read the Docs
+            </span>
+
+            <svg
+    class="shrink-0 [:where(&amp;)]:size-6 size-4"
+    data-flux-icon
+    aria-hidden="true"
+    xmlns="http://www.w3.org/2000/svg"
+    fill="currentColor"
+    viewBox="0 0 64 64"
+>
+    <path d="m23.837 56.26-3.688-3.853L41.47 32 20.15 11.593l3.687-3.853L49.183 32 23.837 56.26Z" />
+</svg></a>    </div>
+</div>
+    </div>
+</div>
+
+                    </div>
+</div>
+
+    <div
+    class="fixed inset-0 isolate z-[9999] block min-h-dvh bg-gray-secondary-light-75 text-black tablet:hidden tablet:block! laptop:hidden!"
+>
+    <div class="flex size-full flex-col justify-between">
+        <div data-header class="flex h-12 items-center justify-center border-b border-gray-secondary-light-600">
+            <div class="flex items-center gap-x-1">
+                <div class="size-6">
+    <img src="https://samsungtizenos.com/build/assets/samsung-tizen-os@2x-DWi9C_5A.png" alt="" class="block size-full" />
+</div>
+
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 18" class="fill-text-gray-secondary-dark-900 h-4.5">
+    
+    <path d="M120.977 3.992h2.144v1.392c.437-.928 1.237-1.392 2.4-1.392a3.392 3.392 0 0 1 1.648.4l-.816 2.048a2.142 2.142 0 0 0-.544-.256c-.192-.075-.443-.112-.752-.112-.63 0-1.11.181-1.44.544-.32.352-.48.933-.48 1.744v4.992h-2.16v-9.36ZM115.273 13.544a5.342 5.342 0 0 1-2.016-.368 4.85 4.85 0 0 1-1.568-1.04 4.849 4.849 0 0 1-1.008-1.536 5.153 5.153 0 0 1-.352-1.904c0-.683.123-1.323.368-1.92a4.903 4.903 0 0 1 1.04-1.552 4.82 4.82 0 0 1 3.456-1.424 4.93 4.93 0 0 1 1.92.368c.597.235 1.109.57 1.536 1.008.427.427.757.933.992 1.52.245.587.368 1.227.368 1.92v.816h-7.616a2.78 2.78 0 0 0 .976 1.6c.501.405 1.136.608 1.904.608.608 0 1.136-.15 1.584-.448a2.769 2.769 0 0 0 1.008-1.2l1.776 1.024a4.884 4.884 0 0 1-1.712 1.84c-.725.459-1.611.688-2.656.688Zm-.08-7.84c-.651 0-1.216.176-1.696.528-.469.352-.8.816-.992 1.392h5.312c-.16-.63-.469-1.104-.928-1.424-.459-.33-1.024-.496-1.696-.496ZM105.067 13.544c-.64 0-1.226-.112-1.76-.336a3.208 3.208 0 0 1-1.296-.96v5.408h-2.144V3.992h2.144V5.24a3.52 3.52 0 0 1 1.28-1.04c.534-.267 1.12-.4 1.76-.4.587 0 1.158.112 1.712.336a4.288 4.288 0 0 1 1.472.944 4.61 4.61 0 0 1 1.024 1.536c.267.597.4 1.285.4 2.064 0 .768-.133 1.456-.4 2.064a4.71 4.71 0 0 1-1.056 1.52 4.494 4.494 0 0 1-3.136 1.28Zm-.352-1.984c.395 0 .763-.075 1.104-.224.342-.15.64-.352.896-.608.256-.267.454-.576.592-.928.15-.363.224-.747.224-1.152 0-.405-.074-.784-.224-1.136a2.634 2.634 0 0 0-.592-.912 2.888 2.888 0 0 0-.896-.608 2.722 2.722 0 0 0-1.104-.224c-.405 0-.778.075-1.12.224-.341.15-.634.357-.88.624-.245.256-.437.56-.576.912a3.042 3.042 0 0 0-.208 1.12c0 .405.07.784.208 1.136.139.352.331.661.576.928.246.267.539.475.88.624.342.15.715.224 1.12.224ZM94.068 13.544a4.963 4.963 0 0 1-1.904-.368 4.95 4.95 0 0 1-1.536-1.04 5.15 5.15 0 0 1-1.04-1.552 4.963 4.963 0 0 1-.368-1.904c0-.683.122-1.317.368-1.904a4.898 4.898 0 0 1 1.04-1.552c.437-.448.949-.795 1.536-1.04a4.783 4.783 0 0 1 1.904-.384c.672 0 1.301.128 1.888.384a4.606 4.606 0 0 1 1.536 1.04c.448.437.794.955 1.04 1.552.256.587.384 1.221.384 1.904 0 .672-.128 1.307-.384 1.904a4.783 4.783 0 0 1-1.04 1.552c-.438.437-.95.784-1.536 1.04a4.844 4.844 0 0 1-1.888.368Zm0-2.032c.384 0 .741-.075 1.072-.224a2.753 2.753 0 0 0 1.44-1.504c.138-.352.208-.72.208-1.104 0-.395-.07-.763-.208-1.104a2.766 2.766 0 0 0-.576-.912 2.754 2.754 0 0 0-.864-.608 2.574 2.574 0 0 0-1.072-.224c-.384 0-.747.075-1.088.224-.331.15-.619.352-.864.608-.235.256-.422.56-.56.912-.139.341-.208.71-.208 1.104 0 .384.069.752.208 1.104.138.341.325.64.56.896.245.256.533.459.864.608.341.15.704.224 1.088.224ZM86.102 1.512h2.176v11.84h-2.176V1.512ZM80.398 13.544a5.342 5.342 0 0 1-2.016-.368 4.853 4.853 0 0 1-1.568-1.04 4.86 4.86 0 0 1-1.008-1.536 5.16 5.16 0 0 1-.352-1.904c0-.683.123-1.323.368-1.92a4.898 4.898 0 0 1 1.04-1.552c.437-.437.95-.784 1.536-1.04a4.822 4.822 0 0 1 1.92-.384c.693 0 1.333.123 1.92.368.597.235 1.11.57 1.536 1.008.427.427.757.933.992 1.52.245.587.368 1.227.368 1.92v.816h-7.616c.15.661.475 1.195.976 1.6s1.136.608 1.904.608c.608 0 1.136-.15 1.584-.448a2.769 2.769 0 0 0 1.008-1.2l1.776 1.024a4.886 4.886 0 0 1-1.712 1.84c-.725.459-1.61.688-2.656.688Zm-.08-7.84c-.65 0-1.216.176-1.696.528-.47.352-.8.816-.992 1.392h5.312c-.16-.63-.47-1.104-.928-1.424-.459-.33-1.024-.496-1.696-.496ZM66.419 3.992h2.256l2.416 6.592 2.368-6.592h2.224l-3.52 9.36h-2.176l-3.568-9.36ZM61.836 13.544a5.342 5.342 0 0 1-2.017-.368 4.853 4.853 0 0 1-1.568-1.04 4.86 4.86 0 0 1-1.008-1.536 5.16 5.16 0 0 1-.352-1.904c0-.683.123-1.323.369-1.92a4.898 4.898 0 0 1 1.04-1.552A4.822 4.822 0 0 1 61.756 3.8c.693 0 1.333.123 1.92.368.597.235 1.109.57 1.535 1.008.427.427.758.933.993 1.52.245.587.368 1.227.368 1.92v.816h-7.617c.15.661.475 1.195.977 1.6.5.405 1.136.608 1.904.608.608 0 1.136-.15 1.584-.448a2.769 2.769 0 0 0 1.007-1.2l1.776 1.024a4.886 4.886 0 0 1-1.712 1.84c-.725.459-1.61.688-2.655.688Zm-.08-7.84c-.651 0-1.217.176-1.697.528-.469.352-.8.816-.991 1.392h5.311c-.16-.63-.469-1.104-.928-1.424-.458-.33-1.023-.496-1.696-.496ZM46.868 1.672h3.184c.982 0 1.856.15 2.624.448.768.299 1.414.71 1.936 1.232a5.024 5.024 0 0 1 1.2 1.856c.278.704.416 1.472.416 2.304 0 .832-.149 1.605-.447 2.32a5.466 5.466 0 0 1-1.264 1.856 5.901 5.901 0 0 1-1.92 1.216 6.532 6.532 0 0 1-2.449.448h-3.28V1.672Zm2.176 2.016v7.648h.849c.64 0 1.215-.096 1.727-.288a3.7 3.7 0 0 0 1.297-.8c.362-.352.64-.757.831-1.216.203-.47.305-.976.305-1.52 0-.565-.086-1.077-.256-1.536a3.188 3.188 0 0 0-.784-1.216c-.352-.341-.795-.603-1.328-.784-.534-.192-1.163-.288-1.889-.288h-.752ZM32.992 3.992h2.144v1.152c.31-.405.699-.73 1.168-.976.48-.245 1.024-.368 1.632-.368 1.163 0 2.07.352 2.72 1.056.662.704.992 1.685.992 2.944v5.552h-2.192V8.024c0-.725-.176-1.296-.528-1.712-.352-.427-.88-.64-1.584-.64-.618 0-1.141.219-1.568.656-.416.437-.624 1.067-.624 1.888v5.136h-2.16v-9.36ZM27.289 13.544a5.342 5.342 0 0 1-2.016-.368 4.854 4.854 0 0 1-1.568-1.04 4.863 4.863 0 0 1-1.008-1.536 5.161 5.161 0 0 1-.352-1.904c0-.683.122-1.323.368-1.92a4.898 4.898 0 0 1 1.04-1.552A4.823 4.823 0 0 1 27.209 3.8c.693 0 1.333.123 1.92.368.597.235 1.109.57 1.536 1.008.426.427.757.933.992 1.52.245.587.368 1.227.368 1.92v.816h-7.616c.149.661.474 1.195.976 1.6.501.405 1.136.608 1.904.608.608 0 1.136-.15 1.584-.448a2.769 2.769 0 0 0 1.008-1.2l1.776 1.024a4.886 4.886 0 0 1-1.712 1.84c-.726.459-1.611.688-2.656.688Zm-.08-7.84c-.651 0-1.216.176-1.696.528-.47.352-.8.816-.992 1.392h5.312c-.16-.63-.47-1.104-.928-1.424-.459-.33-1.024-.496-1.696-.496ZM13.55 11.384l5.44-5.472h-5.327v-1.92h8.144V5.96l-5.44 5.472h5.536v1.92H13.55v-1.968ZM10.305 3.992h2.176v9.36h-2.176v-9.36Zm-.272-2.288c0-.405.123-.73.368-.976.245-.256.576-.384.992-.384.426 0 .757.128.992.384.245.245.368.57.368.976 0 .405-.123.73-.368.976-.235.245-.566.368-.992.368-.438 0-.774-.123-1.008-.368-.235-.245-.352-.57-.352-.976ZM3.951 3.752H.831v-2.08h8.432v2.08H6.127v9.6H3.951v-9.6Z"/>
+    
+</svg>
+            </div>
+        </div>
+
+        <div data-body class="flex flex-col items-center justify-center gap-6">
+            <div>
+                
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 47" class="h-12 fill-transparent">
+                    <rect width="31.35" height="42.75" x="2.4" y="2.125" fill="#E0E7F4" stroke="#B4BDD6" stroke-width="4" rx="5.7"/>
+                    <path stroke="#B4BDD6" stroke-linecap="round" stroke-width="4" d="M13.8 38.225h8.55"/>
+                    <circle cx="48.15" cy="23.5" r="2.5" fill="#B4BDD6"/>
+                    <circle cx="56.15" cy="23.5" r="2.5" fill="#B4BDD6"/>
+                    <path stroke="#B4BDD6" stroke-linecap="round" stroke-width="4" d="m61.65 17.5 5.293 5.293a1 1 0 0 1 0 1.414L61.65 29.5"/>
+                    <path stroke="#2550C5" stroke-linecap="round" stroke-width="4.1" d="M80.5 43h44"/>
+                    <path fill="#ADCBFF" stroke="#2550C5" stroke-width="4" d="M81.65 11a6 6 0 0 1 6-6h30a6 6 0 0 1 6 6v19a6 6 0 0 1-6 6h-30a6 6 0 0 1-6-6V11Z"/>
+                </svg>
+                
+            </div>
+
+            <p class="text-center font-display font-bold text-gray-secondary-dark-400">
+                For the best experience,
+                <br />
+                Please visit us from a computer
+            </p>
+        </div>
+
+        <div
+            data-footer
+            class="flex flex-col items-center gap-y-5 border-t border-gray-secondary-light-600 bg-gray-secondary-light-400 py-10 text-gray-secondary-light-900"
+        >
+            <p class="text-center text-xs">
+                Copyright © 2026 SAMSUNG. All rights reserved.
+            </p>
+
+            <div class="flex gap-7">
+                                    <a
+                        href="https://www.youtube.com/@SamsungDevelopers"
+                        title="Visit our YouTube"
+                    >
+                        <svg class="size-5.5 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <path fill-rule="evenodd" d="M33.06 10.002h-2.117c-4.14.022-19.222.18-23.425 1.31a7.862 7.862 0 0 0-5.541 5.557C.89 20.939.705 28.683.674 31.192l-.006.91c.004 1.081.077 10.412 1.309 15.026a7.863 7.863 0 0 0 5.54 5.557c3.96 1.064 17.568 1.266 22.597 1.304l2.091.01c2.095-.005 19.686-.08 24.28-1.314a7.862 7.862 0 0 0 5.54-5.557c1.142-4.277 1.288-12.607 1.307-14.663l-.002-1.141c-.027-2.358-.198-10.31-1.305-14.455a7.86 7.86 0 0 0-5.54-5.557c-4.203-1.13-19.285-1.288-23.426-1.31Zm-7.625 31.551v-19.11l16.854 9.556-16.854 9.554Z" clip-rule="evenodd"/>
+</svg>                    </a>
+                
+                                    <a
+                        href="https://www.facebook.com/TizenProject/"
+                        title="Visit our Facebook"
+                    >
+                        <svg class="size-5.5 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <path d="M61.333 32.178C61.333 15.979 48.2 2.846 32 2.846S2.666 15.978 2.666 32.18c0 14.64 10.727 26.776 24.75 28.976V40.658h-7.448v-8.48h7.448v-6.462c0-7.352 4.38-11.412 11.08-11.412 3.21 0 6.566.572 6.566.572v7.22h-3.699c-3.643 0-4.78 2.26-4.78 4.58v5.503h8.136l-1.301 8.479h-6.835v20.497c14.023-2.2 24.75-14.335 24.75-28.977Z"/>
+</svg>                    </a>
+                
+                                    <a href="https://x.com/Tizen" title="Visit our X">
+                        <svg class="size-5.5 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <path fill-rule="evenodd" d="m56.4 5.334-19.467 22.6 21.133 30.733H42.533l-14.2-20.733-17.8 20.733h-4.6l20.4-23.666-20.4-29.667h15.533l13.467 19.6L51.8 5.334h4.6Zm-27.8 27 2.066 2.933 14.067 20.067H51.8L34.6 30.667l-2.067-2.933L19.266 8.801H12.2l16.4 23.533Z" clip-rule="evenodd"/>
+</svg>                    </a>
+                            </div>
+        </div>
+    </div>
+</div>
+        </main>
+
+                    <footer id="site-footer" class="isolate">
+    <div
+        class="inline-flex w-full flex-col bg-gray-secondary-light-50 px-4 pt-10 pb-7 dark:bg-gray-primary-light-700 tablet:py-13 tablet:px-6 "
+    >
+        <div class="mx-auto w-full max-w-front">
+            <div
+                class="grid w-full grid-cols-1 items-start justify-start gap-7 gap-x-0 tablet:gap-5 tablet:grid-cols-[30.33%_1fr] laptop:grid-cols-[37%_1fr]"
+            >
+                <div class="col-span-2 inline-flex flex-col items-start justify-start tablet:col-span-1">
+                    <p class="font-display text-gray-primary-light-500 text-base leading-none font-bold dark:text-gray-primary-dark-200" data-dizen-heading>
+    Tizen Developer
+</p>
+                </div>
+
+                                    <nav
+                        class="grid w-full grid-cols-2 items-start justify-start gap-7 tablet:grid-cols-4 tablet:gap-5"
+                    >
+                                                    <div class="inline-flex flex-col items-start justify-start gap-7 pt-1 pb-2 tablet:pb-0">
+                                <p class="gray-secondary-dark-100 h-full min-h-5 text-sm leading-tight font-bold" data-dizen-heading>
+    About Tizen
+</p>
+
+                                <div class="flex flex-col items-start justify-start gap-3 self-stretch">
+                                                                            <a
+    href="https://samsungtizenos.com/about/overview/"
+    target=""
+    class="block h-full min-h-5 text-sm leading-tight font-normal text-gray-primary-light-300 dark:text-gray-secondary-dark-45 hover:underline"
+>
+    Overview
+</a>
+                                                                            <a
+    href="https://samsungtizenos.com/about/brand-guide/"
+    target=""
+    class="block h-full min-h-5 text-sm leading-tight font-normal text-gray-primary-light-300 dark:text-gray-secondary-dark-45 hover:underline"
+>
+    Brand
+</a>
+                                                                            <a
+    href="https://samsungtizenos.com/blog/"
+    target=""
+    class="block h-full min-h-5 text-sm leading-tight font-normal text-gray-primary-light-300 dark:text-gray-secondary-dark-45 hover:underline"
+>
+    News
+</a>
+                                    
+                                                                    </div>
+                            </div>
+                                                    <div class="inline-flex flex-col items-start justify-start gap-7 pt-1 pb-2 tablet:pb-0">
+                                <p class="gray-secondary-dark-100 h-full min-h-5 text-sm leading-tight font-bold" data-dizen-heading>
+    Learn Tizen
+</p>
+
+                                <div class="flex flex-col items-start justify-start gap-3 self-stretch">
+                                                                            <a
+    href="/docs/sdk-tools/dotnet/vscode/tizen-studio/common-tools/overview"
+    target=""
+    class="block h-full min-h-5 text-sm leading-tight font-normal text-gray-primary-light-300 dark:text-gray-secondary-dark-45 hover:underline"
+>
+    SDK/Tools
+</a>
+                                                                            <a
+    href="/docs"
+    target=""
+    class="block h-full min-h-5 text-sm leading-tight font-normal text-gray-primary-light-300 dark:text-gray-secondary-dark-45 hover:underline"
+>
+    API/Guide
+</a>
+                                                                            <a
+    href="https://samsungtizenos.com/tools-download/"
+    target=""
+    class="block h-full min-h-5 text-sm leading-tight font-normal text-gray-primary-light-300 dark:text-gray-secondary-dark-45 hover:underline"
+>
+    Tools
+</a>
+                                                                            <a
+    href="https://samsungtizenos.com/release-notes/"
+    target=""
+    class="block h-full min-h-5 text-sm leading-tight font-normal text-gray-primary-light-300 dark:text-gray-secondary-dark-45 hover:underline"
+>
+    Release Notes
+</a>
+                                    
+                                                                    </div>
+                            </div>
+                                                    <div class="inline-flex flex-col items-start justify-start gap-7 pt-1 pb-2 tablet:pb-0">
+                                <p class="gray-secondary-dark-100 h-full min-h-5 text-sm leading-tight font-bold" data-dizen-heading>
+    Family site
+</p>
+
+                                <div class="flex flex-col items-start justify-start gap-3 self-stretch">
+                                                                            <a
+    href="https://developer.samsung.com/"
+    target=""
+    class="block h-full min-h-5 text-sm leading-tight font-normal text-gray-primary-light-300 dark:text-gray-secondary-dark-45 hover:underline"
+>
+    Samsung developer
+</a>
+                                                                            <a
+    href="https://www.tizenpartner.com/"
+    target=""
+    class="block h-full min-h-5 text-sm leading-tight font-normal text-gray-primary-light-300 dark:text-gray-secondary-dark-45 hover:underline"
+>
+    Tizen partners
+</a>
+                                                                            <a
+    href="https://www.tizen.org/"
+    target=""
+    class="block h-full min-h-5 text-sm leading-tight font-normal text-gray-primary-light-300 dark:text-gray-secondary-dark-45 hover:underline"
+>
+    Tizen.org
+</a>
+                                    
+                                                                    </div>
+                            </div>
+                                                    <div class="inline-flex flex-col items-start justify-start gap-7 pt-1 pb-2 tablet:pb-0">
+                                <p class="gray-secondary-dark-100 h-full min-h-5 text-sm leading-tight font-bold" data-dizen-heading>
+    Legal
+</p>
+
+                                <div class="flex flex-col items-start justify-start gap-3 self-stretch">
+                                                                            <a
+    href="https://samsungtizenos.com/terms-of-use/"
+    target=""
+    class="block h-full min-h-5 text-sm leading-tight font-normal text-gray-primary-light-300 dark:text-gray-secondary-dark-45 hover:underline"
+>
+    Terms of use
+</a>
+                                                                            <a
+    href="https://samsungtizenos.com/privacy-policy/"
+    target=""
+    class="block h-full min-h-5 text-sm leading-tight font-normal text-gray-primary-light-300 dark:text-gray-secondary-dark-45 hover:underline"
+>
+    <strong>Privacy Policy</strong>
+</a>
+                                    
+                                                                            <button
+                                            x-data
+                                            x-on:click="$dispatch('open-cookies-preference')"
+                                            class="block h-full min-h-5 text-sm leading-tight font-normal text-gray-primary-light-300 dark:text-gray-secondary-dark-45 hover:underline"
+                                        >
+                                            Cookie settings
+                                        </button>
+                                                                    </div>
+                            </div>
+                                            </nav>
+                            </div>
+        </div>
+    </div>
+
+    <div class="flex bg-white px-4 tablet:px-6 dark:bg-black">
+        <div
+            class="mx-auto flex flex-col items-start justify-between w-full max-w-front gap-5 py-5 text-gray-primary-light-300 dark:text-gray-primary-dark-500 tablet:inline-flex tablet:h-16.5 tablet:flex-row tablet:gap-6 tablet:py-6"
+        >
+            <div class="flex text-body-2">
+                Copyright © 2026 SAMSUNG. All rights reserved.
+            </div>
+
+            <div class="flex gap-7">
+                                    <a
+                        href="https://www.youtube.com/@SamsungDevelopers"
+                        title="Visit our YouTube"
+                        class="hover:text-static-black dark:hover:text-white"
+                    >
+                        <svg class="size-5.5 fill-current transition" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <path fill-rule="evenodd" d="M33.06 10.002h-2.117c-4.14.022-19.222.18-23.425 1.31a7.862 7.862 0 0 0-5.541 5.557C.89 20.939.705 28.683.674 31.192l-.006.91c.004 1.081.077 10.412 1.309 15.026a7.863 7.863 0 0 0 5.54 5.557c3.96 1.064 17.568 1.266 22.597 1.304l2.091.01c2.095-.005 19.686-.08 24.28-1.314a7.862 7.862 0 0 0 5.54-5.557c1.142-4.277 1.288-12.607 1.307-14.663l-.002-1.141c-.027-2.358-.198-10.31-1.305-14.455a7.86 7.86 0 0 0-5.54-5.557c-4.203-1.13-19.285-1.288-23.426-1.31Zm-7.625 31.551v-19.11l16.854 9.556-16.854 9.554Z" clip-rule="evenodd"/>
+</svg>                    </a>
+                
+                                    <a
+                        href="https://www.facebook.com/TizenProject/"
+                        title="Visit our Facebook"
+                        class="hover:text-static-black dark:hover:text-white"
+                    >
+                        <svg class="size-5.5 fill-current transition" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <path d="M61.333 32.178C61.333 15.979 48.2 2.846 32 2.846S2.666 15.978 2.666 32.18c0 14.64 10.727 26.776 24.75 28.976V40.658h-7.448v-8.48h7.448v-6.462c0-7.352 4.38-11.412 11.08-11.412 3.21 0 6.566.572 6.566.572v7.22h-3.699c-3.643 0-4.78 2.26-4.78 4.58v5.503h8.136l-1.301 8.479h-6.835v20.497c14.023-2.2 24.75-14.335 24.75-28.977Z"/>
+</svg>                    </a>
+                
+                                    <a
+                        href="https://x.com/Tizen"
+                        title="Visit our X"
+                        class="hover:text-static-black dark:hover:text-white"
+                    >
+                        <svg class="size-5.5 fill-current transition" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <path fill-rule="evenodd" d="m56.4 5.334-19.467 22.6 21.133 30.733H42.533l-14.2-20.733-17.8 20.733h-4.6l20.4-23.666-20.4-29.667h15.533l13.467 19.6L51.8 5.334h4.6Zm-27.8 27 2.066 2.933 14.067 20.067H51.8L34.6 30.667l-2.067-2.933L19.266 8.801H12.2l16.4 23.533Z" clip-rule="evenodd"/>
+</svg>                    </a>
+                            </div>
+        </div>
+    </div>
+</footer>
+        
+        <div
+    class="fixed inset-0 isolate z-[9999] block min-h-dvh bg-gray-secondary-light-75 text-black tablet:hidden"
+>
+    <div class="flex size-full flex-col justify-between">
+        <div data-header class="flex h-12 items-center justify-center border-b border-gray-secondary-light-600">
+            <div class="flex items-center gap-x-1">
+                <div class="size-6">
+    <img src="https://samsungtizenos.com/build/assets/samsung-tizen-os@2x-DWi9C_5A.png" alt="" class="block size-full" />
+</div>
+
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 18" class="fill-text-gray-secondary-dark-900 h-4.5">
+    
+    <path d="M120.977 3.992h2.144v1.392c.437-.928 1.237-1.392 2.4-1.392a3.392 3.392 0 0 1 1.648.4l-.816 2.048a2.142 2.142 0 0 0-.544-.256c-.192-.075-.443-.112-.752-.112-.63 0-1.11.181-1.44.544-.32.352-.48.933-.48 1.744v4.992h-2.16v-9.36ZM115.273 13.544a5.342 5.342 0 0 1-2.016-.368 4.85 4.85 0 0 1-1.568-1.04 4.849 4.849 0 0 1-1.008-1.536 5.153 5.153 0 0 1-.352-1.904c0-.683.123-1.323.368-1.92a4.903 4.903 0 0 1 1.04-1.552 4.82 4.82 0 0 1 3.456-1.424 4.93 4.93 0 0 1 1.92.368c.597.235 1.109.57 1.536 1.008.427.427.757.933.992 1.52.245.587.368 1.227.368 1.92v.816h-7.616a2.78 2.78 0 0 0 .976 1.6c.501.405 1.136.608 1.904.608.608 0 1.136-.15 1.584-.448a2.769 2.769 0 0 0 1.008-1.2l1.776 1.024a4.884 4.884 0 0 1-1.712 1.84c-.725.459-1.611.688-2.656.688Zm-.08-7.84c-.651 0-1.216.176-1.696.528-.469.352-.8.816-.992 1.392h5.312c-.16-.63-.469-1.104-.928-1.424-.459-.33-1.024-.496-1.696-.496ZM105.067 13.544c-.64 0-1.226-.112-1.76-.336a3.208 3.208 0 0 1-1.296-.96v5.408h-2.144V3.992h2.144V5.24a3.52 3.52 0 0 1 1.28-1.04c.534-.267 1.12-.4 1.76-.4.587 0 1.158.112 1.712.336a4.288 4.288 0 0 1 1.472.944 4.61 4.61 0 0 1 1.024 1.536c.267.597.4 1.285.4 2.064 0 .768-.133 1.456-.4 2.064a4.71 4.71 0 0 1-1.056 1.52 4.494 4.494 0 0 1-3.136 1.28Zm-.352-1.984c.395 0 .763-.075 1.104-.224.342-.15.64-.352.896-.608.256-.267.454-.576.592-.928.15-.363.224-.747.224-1.152 0-.405-.074-.784-.224-1.136a2.634 2.634 0 0 0-.592-.912 2.888 2.888 0 0 0-.896-.608 2.722 2.722 0 0 0-1.104-.224c-.405 0-.778.075-1.12.224-.341.15-.634.357-.88.624-.245.256-.437.56-.576.912a3.042 3.042 0 0 0-.208 1.12c0 .405.07.784.208 1.136.139.352.331.661.576.928.246.267.539.475.88.624.342.15.715.224 1.12.224ZM94.068 13.544a4.963 4.963 0 0 1-1.904-.368 4.95 4.95 0 0 1-1.536-1.04 5.15 5.15 0 0 1-1.04-1.552 4.963 4.963 0 0 1-.368-1.904c0-.683.122-1.317.368-1.904a4.898 4.898 0 0 1 1.04-1.552c.437-.448.949-.795 1.536-1.04a4.783 4.783 0 0 1 1.904-.384c.672 0 1.301.128 1.888.384a4.606 4.606 0 0 1 1.536 1.04c.448.437.794.955 1.04 1.552.256.587.384 1.221.384 1.904 0 .672-.128 1.307-.384 1.904a4.783 4.783 0 0 1-1.04 1.552c-.438.437-.95.784-1.536 1.04a4.844 4.844 0 0 1-1.888.368Zm0-2.032c.384 0 .741-.075 1.072-.224a2.753 2.753 0 0 0 1.44-1.504c.138-.352.208-.72.208-1.104 0-.395-.07-.763-.208-1.104a2.766 2.766 0 0 0-.576-.912 2.754 2.754 0 0 0-.864-.608 2.574 2.574 0 0 0-1.072-.224c-.384 0-.747.075-1.088.224-.331.15-.619.352-.864.608-.235.256-.422.56-.56.912-.139.341-.208.71-.208 1.104 0 .384.069.752.208 1.104.138.341.325.64.56.896.245.256.533.459.864.608.341.15.704.224 1.088.224ZM86.102 1.512h2.176v11.84h-2.176V1.512ZM80.398 13.544a5.342 5.342 0 0 1-2.016-.368 4.853 4.853 0 0 1-1.568-1.04 4.86 4.86 0 0 1-1.008-1.536 5.16 5.16 0 0 1-.352-1.904c0-.683.123-1.323.368-1.92a4.898 4.898 0 0 1 1.04-1.552c.437-.437.95-.784 1.536-1.04a4.822 4.822 0 0 1 1.92-.384c.693 0 1.333.123 1.92.368.597.235 1.11.57 1.536 1.008.427.427.757.933.992 1.52.245.587.368 1.227.368 1.92v.816h-7.616c.15.661.475 1.195.976 1.6s1.136.608 1.904.608c.608 0 1.136-.15 1.584-.448a2.769 2.769 0 0 0 1.008-1.2l1.776 1.024a4.886 4.886 0 0 1-1.712 1.84c-.725.459-1.61.688-2.656.688Zm-.08-7.84c-.65 0-1.216.176-1.696.528-.47.352-.8.816-.992 1.392h5.312c-.16-.63-.47-1.104-.928-1.424-.459-.33-1.024-.496-1.696-.496ZM66.419 3.992h2.256l2.416 6.592 2.368-6.592h2.224l-3.52 9.36h-2.176l-3.568-9.36ZM61.836 13.544a5.342 5.342 0 0 1-2.017-.368 4.853 4.853 0 0 1-1.568-1.04 4.86 4.86 0 0 1-1.008-1.536 5.16 5.16 0 0 1-.352-1.904c0-.683.123-1.323.369-1.92a4.898 4.898 0 0 1 1.04-1.552A4.822 4.822 0 0 1 61.756 3.8c.693 0 1.333.123 1.92.368.597.235 1.109.57 1.535 1.008.427.427.758.933.993 1.52.245.587.368 1.227.368 1.92v.816h-7.617c.15.661.475 1.195.977 1.6.5.405 1.136.608 1.904.608.608 0 1.136-.15 1.584-.448a2.769 2.769 0 0 0 1.007-1.2l1.776 1.024a4.886 4.886 0 0 1-1.712 1.84c-.725.459-1.61.688-2.655.688Zm-.08-7.84c-.651 0-1.217.176-1.697.528-.469.352-.8.816-.991 1.392h5.311c-.16-.63-.469-1.104-.928-1.424-.458-.33-1.023-.496-1.696-.496ZM46.868 1.672h3.184c.982 0 1.856.15 2.624.448.768.299 1.414.71 1.936 1.232a5.024 5.024 0 0 1 1.2 1.856c.278.704.416 1.472.416 2.304 0 .832-.149 1.605-.447 2.32a5.466 5.466 0 0 1-1.264 1.856 5.901 5.901 0 0 1-1.92 1.216 6.532 6.532 0 0 1-2.449.448h-3.28V1.672Zm2.176 2.016v7.648h.849c.64 0 1.215-.096 1.727-.288a3.7 3.7 0 0 0 1.297-.8c.362-.352.64-.757.831-1.216.203-.47.305-.976.305-1.52 0-.565-.086-1.077-.256-1.536a3.188 3.188 0 0 0-.784-1.216c-.352-.341-.795-.603-1.328-.784-.534-.192-1.163-.288-1.889-.288h-.752ZM32.992 3.992h2.144v1.152c.31-.405.699-.73 1.168-.976.48-.245 1.024-.368 1.632-.368 1.163 0 2.07.352 2.72 1.056.662.704.992 1.685.992 2.944v5.552h-2.192V8.024c0-.725-.176-1.296-.528-1.712-.352-.427-.88-.64-1.584-.64-.618 0-1.141.219-1.568.656-.416.437-.624 1.067-.624 1.888v5.136h-2.16v-9.36ZM27.289 13.544a5.342 5.342 0 0 1-2.016-.368 4.854 4.854 0 0 1-1.568-1.04 4.863 4.863 0 0 1-1.008-1.536 5.161 5.161 0 0 1-.352-1.904c0-.683.122-1.323.368-1.92a4.898 4.898 0 0 1 1.04-1.552A4.823 4.823 0 0 1 27.209 3.8c.693 0 1.333.123 1.92.368.597.235 1.109.57 1.536 1.008.426.427.757.933.992 1.52.245.587.368 1.227.368 1.92v.816h-7.616c.149.661.474 1.195.976 1.6.501.405 1.136.608 1.904.608.608 0 1.136-.15 1.584-.448a2.769 2.769 0 0 0 1.008-1.2l1.776 1.024a4.886 4.886 0 0 1-1.712 1.84c-.726.459-1.611.688-2.656.688Zm-.08-7.84c-.651 0-1.216.176-1.696.528-.47.352-.8.816-.992 1.392h5.312c-.16-.63-.47-1.104-.928-1.424-.459-.33-1.024-.496-1.696-.496ZM13.55 11.384l5.44-5.472h-5.327v-1.92h8.144V5.96l-5.44 5.472h5.536v1.92H13.55v-1.968ZM10.305 3.992h2.176v9.36h-2.176v-9.36Zm-.272-2.288c0-.405.123-.73.368-.976.245-.256.576-.384.992-.384.426 0 .757.128.992.384.245.245.368.57.368.976 0 .405-.123.73-.368.976-.235.245-.566.368-.992.368-.438 0-.774-.123-1.008-.368-.235-.245-.352-.57-.352-.976ZM3.951 3.752H.831v-2.08h8.432v2.08H6.127v9.6H3.951v-9.6Z"/>
+    
+</svg>
+            </div>
+        </div>
+
+        <div data-body class="flex flex-col items-center justify-center gap-6">
+            <div>
+                
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 47" class="h-12 fill-transparent">
+                    <rect width="31.35" height="42.75" x="2.4" y="2.125" fill="#E0E7F4" stroke="#B4BDD6" stroke-width="4" rx="5.7"/>
+                    <path stroke="#B4BDD6" stroke-linecap="round" stroke-width="4" d="M13.8 38.225h8.55"/>
+                    <circle cx="48.15" cy="23.5" r="2.5" fill="#B4BDD6"/>
+                    <circle cx="56.15" cy="23.5" r="2.5" fill="#B4BDD6"/>
+                    <path stroke="#B4BDD6" stroke-linecap="round" stroke-width="4" d="m61.65 17.5 5.293 5.293a1 1 0 0 1 0 1.414L61.65 29.5"/>
+                    <path stroke="#2550C5" stroke-linecap="round" stroke-width="4.1" d="M80.5 43h44"/>
+                    <path fill="#ADCBFF" stroke="#2550C5" stroke-width="4" d="M81.65 11a6 6 0 0 1 6-6h30a6 6 0 0 1 6 6v19a6 6 0 0 1-6 6h-30a6 6 0 0 1-6-6V11Z"/>
+                </svg>
+                
+            </div>
+
+            <p class="text-center font-display font-bold text-gray-secondary-dark-400">
+                For the best experience,
+                <br />
+                Please visit us from a computer
+            </p>
+        </div>
+
+        <div
+            data-footer
+            class="flex flex-col items-center gap-y-5 border-t border-gray-secondary-light-600 bg-gray-secondary-light-400 py-10 text-gray-secondary-light-900"
+        >
+            <p class="text-center text-xs">
+                Copyright © 2026 SAMSUNG. All rights reserved.
+            </p>
+
+            <div class="flex gap-7">
+                                    <a
+                        href="https://www.youtube.com/@SamsungDevelopers"
+                        title="Visit our YouTube"
+                    >
+                        <svg class="size-5.5 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <path fill-rule="evenodd" d="M33.06 10.002h-2.117c-4.14.022-19.222.18-23.425 1.31a7.862 7.862 0 0 0-5.541 5.557C.89 20.939.705 28.683.674 31.192l-.006.91c.004 1.081.077 10.412 1.309 15.026a7.863 7.863 0 0 0 5.54 5.557c3.96 1.064 17.568 1.266 22.597 1.304l2.091.01c2.095-.005 19.686-.08 24.28-1.314a7.862 7.862 0 0 0 5.54-5.557c1.142-4.277 1.288-12.607 1.307-14.663l-.002-1.141c-.027-2.358-.198-10.31-1.305-14.455a7.86 7.86 0 0 0-5.54-5.557c-4.203-1.13-19.285-1.288-23.426-1.31Zm-7.625 31.551v-19.11l16.854 9.556-16.854 9.554Z" clip-rule="evenodd"/>
+</svg>                    </a>
+                
+                                    <a
+                        href="https://www.facebook.com/TizenProject/"
+                        title="Visit our Facebook"
+                    >
+                        <svg class="size-5.5 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <path d="M61.333 32.178C61.333 15.979 48.2 2.846 32 2.846S2.666 15.978 2.666 32.18c0 14.64 10.727 26.776 24.75 28.976V40.658h-7.448v-8.48h7.448v-6.462c0-7.352 4.38-11.412 11.08-11.412 3.21 0 6.566.572 6.566.572v7.22h-3.699c-3.643 0-4.78 2.26-4.78 4.58v5.503h8.136l-1.301 8.479h-6.835v20.497c14.023-2.2 24.75-14.335 24.75-28.977Z"/>
+</svg>                    </a>
+                
+                                    <a href="https://x.com/Tizen" title="Visit our X">
+                        <svg class="size-5.5 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <path fill-rule="evenodd" d="m56.4 5.334-19.467 22.6 21.133 30.733H42.533l-14.2-20.733-17.8 20.733h-4.6l20.4-23.666-20.4-29.667h15.533l13.467 19.6L51.8 5.334h4.6Zm-27.8 27 2.066 2.933 14.067 20.067H51.8L34.6 30.667l-2.067-2.933L19.266 8.801H12.2l16.4 23.533Z" clip-rule="evenodd"/>
+</svg>                    </a>
+                            </div>
+        </div>
+    </div>
+</div>
+        <div x-persist="toast">
+    <div class="leading-0">
+        <ui-toast x-data x-on:toast-show.document="$el.showToast($event.detail)" wire:ignore>
+    <template>
+        <div
+            popover="manual"
+            class="m-0 bg-transparent p-6 [&amp;[data-position*=bottom]]:mt-auto [&amp;[data-position*=bottom]]:mb-8 [&amp;[data-position*=top]]:mb-auto [&amp;[data-position*=right]]:ml-auto rtl:[&amp;[data-position*=right]]:mr-auto rtl:[&amp;[data-position*=right]]:ml-0 [&amp;[data-position*=left]]:mr-auto rtl:[&amp;[data-position*=left]]:mr-0 rtl:[&amp;[data-position*=left]]:ml-auto [&amp;[data-position*=center]]:mx-auto [&amp;[data-variant*=plain]_[data-close-button]]:hidden"
+            data-position="bottom center"
+            data-variant=""
+            data-flux-toast-dialog
+        >
+            <div class="max-w-115 rounded-md bg-gray-secondary-dark-600 px-9.25 py-2.75">
+                <div class="flex items-start gap-4">
+                    <div
+                        class="flex flex-1 gap-2 py-1.5 ps-2.5 [[data-flux-toast-dialog][data-variant*=plain]_&]:ps-0!"
+                    >
+                        
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 16 16"
+                            fill="currentColor"
+                            class="mt-0.5 hidden size-4 shrink-0 text-lime-600 dark:text-lime-400 [[data-flux-toast-dialog][data-variant=success]_&]:block"
+                        >
+                            <path
+                                fill-rule="evenodd"
+                                d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14Zm3.844-8.791a.75.75 0 0 0-1.188-.918l-3.7 4.79-1.649-1.833a.75.75 0 1 0-1.114 1.004l2.25 2.5a.75.75 0 0 0 1.15-.043l4.25-5.5Z"
+                                clip-rule="evenodd"
+                            />
+                        </svg>
+
+                        
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 16 16"
+                            fill="currentColor"
+                            class="mt-0.5 hidden size-4 shrink-0 text-amber-500 dark:text-amber-400 [[data-flux-toast-dialog][data-variant=warning]_&]:block"
+                        >
+                            <path
+                                fill-rule="evenodd"
+                                d="M6.701 2.25c.577-1 2.02-1 2.598 0l5.196 9a1.5 1.5 0 0 1-1.299 2.25H2.804a1.5 1.5 0 0 1-1.3-2.25l5.197-9ZM8 4a.75.75 0 0 1 .75.75v3a.75.75 0 1 1-1.5 0v-3A.75.75 0 0 1 8 4Zm0 8a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z"
+                                clip-rule="evenodd"
+                            />
+                        </svg>
+
+                        
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 16 16"
+                            fill="currentColor"
+                            class="mt-0.5 hidden size-4 shrink-0 text-rose-500 dark:text-rose-400 [[data-flux-toast-dialog][data-variant=danger]_&]:block"
+                        >
+                            <path
+                                fill-rule="evenodd"
+                                d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14ZM8 4a.75.75 0 0 1 .75.75v3a.75.75 0 0 1-1.5 0v-3A.75.75 0 0 1 8 4Zm0 8a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z"
+                                clip-rule="evenodd"
+                            />
+                        </svg>
+
+                        <div>
+                            
+
+                            
+                            <div class="text-gray-primary-dark-200 [&:not(:empty)+div]:text-gray-primary-dark-200 text-sm font-medium [&:not(:empty)]:pb-2 [&:not(:empty)+div]:font-normal"><slot name="heading"></slot></div>
+                            
+
+                            
+                            <div class="text-center text-sm/[20px] text-gray-primary-dark-200">
+                                <slot name="text"></slot>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                    <div class="flex items-center" data-close-button>
+                        <button
+                            type="button"
+                            onclick="this.closest('ui-toast').hideToast()"
+                            class="inline-flex h-8 w-8 items-center justify-center gap-2 truncate rounded-md bg-transparent text-sm font-medium text-zinc-400 hover:bg-zinc-800/5 hover:text-gray-primary-dark-200 disabled:cursor-default disabled:opacity-50 dark:text-zinc-400 dark:hover:bg-white/15 dark:hover:text-white dark:disabled:opacity-75"
+                            as="button"
+                        >
+                            <div>
+                                <svg
+                                    class="[:where(&)]:size-5"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 20 20"
+                                    fill="currentColor"
+                                    aria-hidden="true"
+                                    data-slot="icon"
+                                >
+                                    <path
+                                        d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z"
+                                    ></path>
+                                </svg>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+</ui-toast>
+    </div>
+</div>
+
+
+        
+        <div x-data="cookieConsent()">
+    <section
+        x-show="showBanner && !showPreferences"
+        x-cloak
+        class="fixed bottom-4 left-4 w-full max-w-xl tablet:bottom-8 tablet:left-8"
+        role="dialog"
+        aria-modal="true"
+        x-on:open-cookies-preference.window="
+            openPreferences()
+            $flux.modal('cookie-preferences').show()
+        "
+    >
+        <div class="[:where(&amp;)]:bg-white dark:[:where(&amp;)]:bg-white/10 border border-zinc-200 dark:border-white/10 [:where(&amp;)]:p-6 [:where(&amp;)]:rounded-xl rounded border-0 bg-white! p-6 shadow-[-5px_5px_10px_0px_#00000012,_0px_0px_50px_0px_#0000001a]" data-flux-card>
+    <p class="text-sm leading-relaxed text-gray-secondary-dark-900">
+                We use cookies to ensure the proper functioning of our site, to remember your preferences (such as global messages and release notes), and to analyze traffic. You can change your preferences at any time.
+
+                <a class="inline font-medium underline-offset-[6px] hover:decoration-current underline [[data-color]&gt;&amp;]:text-inherit [[data-color]&gt;&amp;]:decoration-current/20 dark:[[data-color]&gt;&amp;]:decoration-current/50 [[data-color]&gt;&amp;]:hover:decoration-current text-[var(--color-accent-content)] decoration-[color-mix(in_oklab,var(--color-accent-content),transparent_80%)]" href="https://samsungtizenos.com/privacy-policy" target="_blank" rel="noopener" data-flux-link >Read our cookie &amp; privacy policy</a>            </p>
+
+            <div class="mt-4 flex items-center justify-between gap-3">
+                <div class="flex gap-3">
+                    <button type="button" class="relative items-center justify-center font-bold whitespace-nowrap gap-2 disabled:pointer-events-none disabled:cursor-default text-sm h-10 px-6 rounded-[5rem] inline-flex  bg-samsung hover:bg-royal-dark text-gray-secondary-light-50 hover:text-white disabled:bg-gray-primary-light-400 disabled:text-gray-primary-light-100   [:is([data-flux-button-group]&gt;&amp;:last-child,_[data-flux-button-group]_:last-child&gt;&amp;)]:border-e-[1px] dark:[:is([data-flux-button-group]&gt;&amp;:last-child,_[data-flux-button-group]_:last-child&gt;&amp;)]:border-s-[1px] dark:[:is([data-flux-button-group]&gt;&amp;:last-child,_[data-flux-button-group]_:last-child&gt;&amp;)]:border-e-0 [:is([data-flux-button-group]&gt;&amp;:not(:first-child),_[data-flux-button-group]_:not(:first-child)&gt;&amp;)]:border-s-[color-mix(in_srgb,var(--color-accent-foreground),transparent_85%)] [[data-flux-button-group]_&amp;]:border-e-0   transition duration-200 ease-in-out cursor-pointer" data-flux-button="data-flux-button" data-flux-group-target="data-flux-group-target" x-on:click="acceptAll">
+        Accept all
+    </button>
+
+                    <button type="button" class="relative items-center justify-center font-bold whitespace-nowrap gap-2 disabled:pointer-events-none disabled:cursor-default text-sm h-10 px-6 rounded-[5rem] inline-flex  bg-samsung hover:bg-royal-dark text-gray-secondary-light-50 hover:text-white disabled:bg-gray-primary-light-400 disabled:text-gray-primary-light-100   [:is([data-flux-button-group]&gt;&amp;:last-child,_[data-flux-button-group]_:last-child&gt;&amp;)]:border-e-[1px] dark:[:is([data-flux-button-group]&gt;&amp;:last-child,_[data-flux-button-group]_:last-child&gt;&amp;)]:border-s-[1px] dark:[:is([data-flux-button-group]&gt;&amp;:last-child,_[data-flux-button-group]_:last-child&gt;&amp;)]:border-e-0 [:is([data-flux-button-group]&gt;&amp;:not(:first-child),_[data-flux-button-group]_:not(:first-child)&gt;&amp;)]:border-s-[color-mix(in_srgb,var(--color-accent-foreground),transparent_85%)] [[data-flux-button-group]_&amp;]:border-e-0   transition duration-200 ease-in-out cursor-pointer" data-flux-button="data-flux-button" data-flux-group-target="data-flux-group-target" x-on:click="rejectNonEssential">
+        Reject non-essential
+    </button>
+                </div>
+
+                <button type="button" class="relative items-center justify-center font-bold whitespace-nowrap gap-2 disabled:pointer-events-none disabled:cursor-default text-sm h-10 px-6 rounded-[5rem] inline-flex          transition duration-200 ease-in-out cursor-pointer px-0! text-xs font-medium text-gray-secondary-dark-900 underline underline-offset-2" data-flux-button="data-flux-button" data-flux-group-target="data-flux-group-target" x-on:click="showPreferences = true
+                        showBanner = false
+                        $flux.modal('cookie-preferences').show()">
+        Preferences
+    </button>
+            </div>
+</div>
+    </section>
+
+    <ui-modal class="*:open:data-flux-flyout:min-w-[calc(100vw+1rem)]!" disable-click-outside="" data-flux-modal>
+    
+    <dialog
+        wire:ignore.self 
+        class="rounded-xl p-6 shadow-lg [:where(&amp;)]:max-w-xl [:where(&amp;)]:min-w-xs rounded-xl bg-white shadow-lg ring ring-black/5 dark:bg-zinc-800 dark:ring-zinc-700 bg-white!"
+         data-modal="cookie-preferences"                 x-data="fluxModal('cookie-preferences', null)"
+        x-on:modal-show.document="handleShow($event)"
+        x-on:modal-close.document="handleClose($event)"
+    >
+        <header>
+            <h2 class="font-medium [:where(&amp;)]:text-zinc-800 [:where(&amp;)]:dark:text-white text-sm [&amp;:has(+[data-flux-subheading])]:mb-2 [[data-flux-subheading]+&amp;]:mt-2 pr-8 text-2xl! font-bold! text-gray-secondary-dark-900" data-flux-heading>Customize your cookie preferences</h2>
+
+        
+            <p class="mt-6 text-sm text-gray-secondary-dark-900">
+                You can enable or disable non-essential cookies. Essential cookies are always on to ensure the site works properly and to keep you signed in.
+            </p>
+        </header>
+
+        <div class="mt-4">
+            <div class="[:where(&amp;)]:bg-white dark:[:where(&amp;)]:bg-white/10 border border-zinc-200 dark:border-white/10 [:where(&amp;)]:p-6 [:where(&amp;)]:rounded-xl border-0! px-0!" data-flux-card>
+    <div class="flex items-start justify-between gap-4">
+                    <div>
+                        <h3 class="font-medium [:where(&amp;)]:text-zinc-800 [:where(&amp;)]:dark:text-white text-sm [&amp;:has(+[data-flux-subheading])]:mb-2 [[data-flux-subheading]+&amp;]:mt-2 font-bold! text-gray-secondary-dark-900" data-flux-heading>Necessary</h3>
+
+        
+                        <p class="mt-1 text-xs text-gray-secondary-dark-900">
+                            These cookies are necessary for the website to function properly and cannot be switched off. They help with things like logging in and setting your privacy preferences.
+                        </p>
+                    </div>
+
+                    <ui-label class="inline-flex items-center text-sm font-medium  [:where(&amp;)]:text-zinc-800 [:where(&amp;)]:dark:text-white [&amp;:has([data-flux-label-trailing])]:flex inline-flex items-center gap-2" data-flux-label>
+    <span class="sr-only">Always on</span>
+
+                        <div class="flex h-6 items-center px-[2px] py-[1px]">
+            <ui-switch
+                class="group relative inline-flex h-4 w-9.5 min-w-9.5 items-center outline-offset-5 rounded-full transition-[border,background-color] duration-200 ease-in-out bg-transparent border border-gray-primary-light-200 hover:not-[&amp;[disabled]]:border-gray-secondary-light-900 [print-color-adjust:exact] data-checked:bg-samsung data-checked:border-samsung data-checked:not-[&amp;[disabled]]:hover:bg-gulf data-checked:not-[&amp;[disabled]]:hover:border-gulf [&amp;[disabled]]:data-checked:bg-gray-secondary-light-700 [&amp;[disabled]]:border-gray-secondary-light-700" disabled="disabled" checked="checked"
+                                data-flux-control
+                data-flux-switch
+            >
+                <span class="absolute size-5.5 rounded-full transition-[border,translate] duration-200 ease-in-out -translate-x-[1px] rtl:translate-x-[1px] bg-gray-secondary-light-50 border border-gray-primary-light-200 group-data-checked:translate-x-[15px] rtl:group-data-checked:-translate-x-[15px] group-data-checked:border-samsung group-data-checked:not-group-[[disabled]]:group-hover:border-gulf not-group-data-checked:not-group-[[disabled]]:group-hover:bg-gray-primary-dark-150 not-group-data-checked:not-group-[[disabled]]:group-hover:border-gray-secondary-light-900 group-[[disabled]]:border-gray-secondary-light-700 group-[[disabled]]:bg-gray-secondary-light-200"></span>
+            </ui-switch>
+
+    </div>
+
+    
+    
+    </ui-label>
+                </div>
+</div>
+
+            <div class="[:where(&amp;)]:bg-white dark:[:where(&amp;)]:bg-white/10 border border-zinc-200 dark:border-white/10 [:where(&amp;)]:p-6 [:where(&amp;)]:rounded-xl border-0! px-0!" data-flux-card>
+    <div class="flex items-start gap-4">
+                    <div>
+                        <h3 class="font-medium [:where(&amp;)]:text-zinc-800 [:where(&amp;)]:dark:text-white text-sm [&amp;:has(+[data-flux-subheading])]:mb-2 [[data-flux-subheading]+&amp;]:mt-2 font-bold! text-gray-secondary-dark-900" data-flux-heading>Analytics</h3>
+
+        
+                        <p class="mt-1 text-xs text-gray-secondary-dark-900">
+                            These cookies help us improve the site by tracking which pages are most popular and how visitors move around the site.
+                        </p>
+                    </div>
+
+                    <ui-label class="inline-flex items-center text-sm font-medium  [:where(&amp;)]:text-zinc-800 [:where(&amp;)]:dark:text-white [&amp;:has([data-flux-label-trailing])]:flex inline-flex items-center gap-2" data-flux-label>
+    <span class="sr-only">Enable analytics cookies</span>
+
+                        <div class="flex h-6 items-center px-[2px] py-[1px]">
+            <ui-switch
+                class="group relative inline-flex h-4 w-9.5 min-w-9.5 items-center outline-offset-5 rounded-full transition-[border,background-color] duration-200 ease-in-out bg-transparent border border-gray-primary-light-200 hover:not-[&amp;[disabled]]:border-gray-secondary-light-900 [print-color-adjust:exact] data-checked:bg-samsung data-checked:border-samsung data-checked:not-[&amp;[disabled]]:hover:bg-gulf data-checked:not-[&amp;[disabled]]:hover:border-gulf [&amp;[disabled]]:data-checked:bg-gray-secondary-light-700 [&amp;[disabled]]:border-gray-secondary-light-700" x-model="preferences.analytics" x-on:change="updateConsentFromPreferences"
+                                data-flux-control
+                data-flux-switch
+            >
+                <span class="absolute size-5.5 rounded-full transition-[border,translate] duration-200 ease-in-out -translate-x-[1px] rtl:translate-x-[1px] bg-gray-secondary-light-50 border border-gray-primary-light-200 group-data-checked:translate-x-[15px] rtl:group-data-checked:-translate-x-[15px] group-data-checked:border-samsung group-data-checked:not-group-[[disabled]]:group-hover:border-gulf not-group-data-checked:not-group-[[disabled]]:group-hover:bg-gray-primary-dark-150 not-group-data-checked:not-group-[[disabled]]:group-hover:border-gray-secondary-light-900 group-[[disabled]]:border-gray-secondary-light-700 group-[[disabled]]:bg-gray-secondary-light-200"></span>
+            </ui-switch>
+
+    </div>
+
+    
+    
+    </ui-label>
+                </div>
+</div>
+        </div>
+
+        <footer class="mt-5 flex items-center gap-3">
+            <ui-close data-flux-modal-close >
+    <button type="button" class="relative items-center justify-center font-bold whitespace-nowrap gap-2 disabled:pointer-events-none disabled:cursor-default text-sm h-10 px-6 rounded-[5rem] inline-flex  bg-samsung hover:bg-royal-dark text-gray-secondary-light-50 hover:text-white disabled:bg-gray-primary-light-400 disabled:text-gray-primary-light-100   [:is([data-flux-button-group]&gt;&amp;:last-child,_[data-flux-button-group]_:last-child&gt;&amp;)]:border-e-[1px] dark:[:is([data-flux-button-group]&gt;&amp;:last-child,_[data-flux-button-group]_:last-child&gt;&amp;)]:border-s-[1px] dark:[:is([data-flux-button-group]&gt;&amp;:last-child,_[data-flux-button-group]_:last-child&gt;&amp;)]:border-e-0 [:is([data-flux-button-group]&gt;&amp;:not(:first-child),_[data-flux-button-group]_:not(:first-child)&gt;&amp;)]:border-s-[color-mix(in_srgb,var(--color-accent-foreground),transparent_85%)] [[data-flux-button-group]_&amp;]:border-e-0   transition duration-200 ease-in-out" data-flux-button="data-flux-button" data-flux-group-target="data-flux-group-target" x-on:click="acceptAll()
+                        closePreferences()">
+        Accept all
+    </button>
+</ui-close>
+
+            <ui-close data-flux-modal-close >
+    <button type="button" class="relative items-center justify-center font-bold whitespace-nowrap gap-2 disabled:pointer-events-none disabled:cursor-default text-sm h-10 px-6 rounded-[5rem] inline-flex  bg-samsung hover:bg-royal-dark text-gray-secondary-light-50 hover:text-white disabled:bg-gray-primary-light-400 disabled:text-gray-primary-light-100   [:is([data-flux-button-group]&gt;&amp;:last-child,_[data-flux-button-group]_:last-child&gt;&amp;)]:border-e-[1px] dark:[:is([data-flux-button-group]&gt;&amp;:last-child,_[data-flux-button-group]_:last-child&gt;&amp;)]:border-s-[1px] dark:[:is([data-flux-button-group]&gt;&amp;:last-child,_[data-flux-button-group]_:last-child&gt;&amp;)]:border-e-0 [:is([data-flux-button-group]&gt;&amp;:not(:first-child),_[data-flux-button-group]_:not(:first-child)&gt;&amp;)]:border-s-[color-mix(in_srgb,var(--color-accent-foreground),transparent_85%)] [[data-flux-button-group]_&amp;]:border-e-0   transition duration-200 ease-in-out cursor-pointer" data-flux-button="data-flux-button" data-flux-group-target="data-flux-group-target" x-on:click="rejectNonEssential()
+                        closePreferences()">
+        Reject non-essential
+    </button>
+</ui-close>
+        </footer>
+
+        <ui-close data-flux-modal-close >
+    <button type="button" class="relative items-center justify-center font-bold whitespace-nowrap gap-2 disabled:pointer-events-none disabled:cursor-default text-sm h-10 px-6 rounded-[5rem] inline-flex          transition duration-200 ease-in-out absolute! top-4 right-4 z-1 cursor-pointer rounded-full p-2! opacity-80 transition hover:opacity-100" data-flux-button="data-flux-button" data-flux-group-target="data-flux-group-target" title="Close dialog" x-on:click="closePreferences()">
+        <svg
+    class="shrink-0 [:where(&amp;)]:size-6 size-6 text-black"
+    data-flux-icon
+    aria-hidden="true"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 64 64"
+    fill="currentColor"
+>
+    <path
+        d="m53.488 8.155 2.357 2.357-21.488 21.487 21.487 21.487-2.357 2.357L32 34.356 10.512 55.845l-2.357-2.357 21.488-21.489L8.154 10.511l2.357-2.357L32 29.642 53.488 8.155Z"
+    />
+</svg>
+    </button>
+</ui-close>
+
+            </dialog>
+</ui-modal>
+
+</div>
+
+
+        <div
+    x-data="{ active: false, show: true }"
+    class="fixed right-4 bottom-4 isolate flex flex-row items-end gap-y-3 pr-3 pb-3"
+    x-on:mouseenter="active = true"
+    x-on:mouseleave="active = false"
+    x-on:open-cookies-preference.window="show = false"
+    x-on:close-cookies-preference.window="show = true"
+    x-show="show"
+    x-cloak
+>
+    <div class="flex flex-col items-end gap-3" x-show="active" x-cloak>
+        <a href="https://github.com/Samsung/Tizen.Issues/issues" target="_blank">
+            <div
+                class="relative flex h-14.5 items-center  rounded-full rounded-r-0 translate-x-7.25 pr-10 pl-4 border border-blue-dark-100/8 bg-gray-secondary-light-75 text-blue-dark-100"
+            >
+                <span class="w-32.5 font-sans text-sm">Report any errors or questions you found</span>
+            </div>
+        </a>
+    </div>
+
+    <a
+        class="flex items-center justify-center size-14.5 rounded-full bg-linear-[145deg] from-samsung to-[#46009E] to-106% inset-ring-2 inset-ring-white/13 isolate order-last"
+        href="https://github.com/Samsung/Tizen.Issues/issues"
+        target="_blank"
+    >
+        <img
+            src="https://samsungtizenos.com/build/assets/floating-issue-report-icon-CfFKW807.svg"
+            alt=""
+            class="size-6 transition-transform group-hover:scale-105"
+        />
+    </a>
+
+    <span class="deploy-version" style="position:fixed; right:4px; bottom:4px; font-size:10px; color:rgba(255,255,255,0.6); z-index:1; pointer-events:none; user-select:none;">
+        v2.4.30
+    </span>
+</div>
+        <ui-modal class="*:open:data-flux-flyout:min-w-[calc(100vw+1rem)]!" data-flux-modal>
+    
+    <dialog
+        wire:ignore.self 
+        class="fixed m-0 mb-auto min-w-screen overflow-y-auto border-b p-8 opacity-0 [--flux-flyout-translate:translateY(-50px)] open:min-w-screen border-transparent bg-white dark:border-zinc-700 dark:bg-zinc-800 bg-white! dark:bg-black!"
+         data-modal="global-search"          data-flux-flyout         x-data="fluxModal('global-search', null)"
+        x-on:modal-show.document="handleShow($event)"
+        x-on:modal-close.document="handleClose($event)"
+    >
+        <div class="isolate mx-auto w-full max-w-navigation">
+        <div
+            x-data="{
+                focusSearch(event) {
+                    if (`global-search` !== event.detail.name) {
+                        return
+                    }
+                    $el.querySelector(`input[name=s]`).focus()
+                },
+            }"
+            x-on:modal-show.document="focusSearch($event)"
+        >
+            <form role="search" method="GET" action="https://samsungtizenos.com/" class="">
+    <input type="hidden" name="type" value="all" />
+
+    <div class="w-full relative block group/input **:data-flux-icon:not-data-slot:size-10" data-flux-input>
+                            <div class="absolute start-0 top-0 bottom-0 flex items-center justify-center text-xs text-black dark:text-white">
+                    <svg
+    class="shrink-0 [:where(&amp;)]:size-5"
+    data-flux-icon
+    aria-hidden="true"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 96 96"
+    fill="currentColor"
+>
+    
+    <path d="M40.581 4.09c20.126 0 36.5 16.374 36.5 36.5a36.33 36.33 0 0 1-7.963 22.734L91.92 86.27l-5.676 5.639-22.766-22.913A36.33 36.33 0 0 1 40.58 77.09c-20.126 0-36.5-16.374-36.5-36.5s16.374-36.5 36.5-36.5m0 8c-15.715 0-28.5 12.785-28.5 28.5s12.785 28.5 28.5 28.5 28.5-12.785 28.5-28.5-12.785-28.5-28.5-28.5"/>
+    
+</svg>
+                </div>
+            
+            <input
+                type="text"
+                
+                class="block w-full rounded-lg border disabled:shadow-none dark:shadow-none appearance-none h-22 font-display text-7xl/10 font-bold placeholder:font-bold ps-10 pe-10  text-gray-primary-light-600 dark:text-gray-primary-dark-100 rounded-none border-0 border-b border-gray-primary-dark-400 focus:border-document-samsung-blue focus:outline-hidden  ps-15" placeholder="Search" value=""
+                 name="s" data-swplive="true" data-swpengine="default" data-swpconfig="default"                                                                 data-flux-control
+                data-flux-group-target
+                                            >
+
+                            <div class="absolute top-0 bottom-0 flex items-center gap-x-1.5 pe-2 border-e border-transparent end-0 text-xs text-zinc-400">
+                    
+                    
+                                            <button type="button" class="relative items-center justify-center font-bold whitespace-nowrap gap-4 disabled:pointer-events-none disabled:cursor-default text-xs size-4 inline-flex -ms-1.5 -me-1.5 bg-transparent text-gray-primary-light-600 hover:text-gray-primary-light-400 disabled:text-gray-primary-light-400      transition duration-200 ease-in-out -me-1 [[data-flux-input]:has(input:placeholder-shown)_&amp;]:hidden [[data-flux-input]:has(input[disabled])_&amp;]:hidden" data-flux-button="data-flux-button" x-data="fluxInputClearable" x-on:click="clear()" tabindex="-1" aria-label="Clear input" data-flux-clear-button="data-flux-clear-button">
+        <svg
+    class="shrink-0 size-6"
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 24 24"
+    data-flux-icon
+    aria-hidden="true"
+    data-slot="icon"
+>
+    
+    <circle class="fill-gray-secondary-light-400 dark:fill-gray-secondary-dark-500" cx="12" cy="12" r="12" />
+    <path class="fill-gray-secondary-light-800 dark:fill-gray-secondary-dark-100" fill-rule="evenodd" d="m11.69 12-3.897 3.896.707.708 3.896-3.897 3.897 3.897.707-.707L13.104 12 17 8.104l-.707-.708-3.896 3.897L8.5 7.396l-.707.708z" clip-rule="evenodd" />
+    
+</svg>
+    </button>
+
+                    
+                    
+                    
+                    
+                    
+                                    </div>
+                    </div>
+
+</form>
+
+
+            <div data-search-results-container></div>
+        </div>
+    </div>
+
+            </dialog>
+</ui-modal>
+
+
+        <script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"\/*"},{"not":{"href_matches":["\/wp\/wp-*.php","\/wp\/wp-admin\/*","\/content\/uploads\/*","\/content\/*","\/content\/plugins\/*","\/content\/themes\/tizen\/*","\/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+<script type="application/ld+json" id="slim-seo-schema">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://samsungtizenos.com/#website","url":"https://samsungtizenos.com/","name":"Tizen Developer","inLanguage":"en-US","potentialAction":{"@id":"https://samsungtizenos.com/#searchaction"},"publisher":{"@id":"https://samsungtizenos.com/#organization"}},{"@type":"SearchAction","@id":"https://samsungtizenos.com/#searchaction","target":"https://samsungtizenos.com/?s={search_term_string}","query-input":"required name=search_term_string"},{"@type":"BreadcrumbList","name":"Breadcrumbs","@id":"https://samsungtizenos.com/docs/#breadcrumblist","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://samsungtizenos.com/"},{"@type":"ListItem","position":2,"name":"Documentation"}]},{"@type":"WebPage","@id":"https://samsungtizenos.com/docs/#webpage","url":"https://samsungtizenos.com/docs/","inLanguage":"en-US","name":"Tizen Docs - APIs, Guides, SDKs, and Tools","description":"Browse Tizen documentation for APIs, guides, SDK tools, tutorials, and development resources for web, native, .NET, and more.","datePublished":"2025-03-27T17:34:20+00:00","dateModified":"2026-05-18T11:42:06+00:00","isPartOf":{"@id":"https://samsungtizenos.com/#website"},"breadcrumb":{"@id":"https://samsungtizenos.com/docs/#breadcrumblist"},"potentialAction":{"@id":"https://samsungtizenos.com/docs/#readaction"}},{"@type":"ReadAction","@id":"https://samsungtizenos.com/docs/#readaction","target":"https://samsungtizenos.com/docs/"},{"@type":"Organization","@id":"https://samsungtizenos.com/#organization","url":"https://samsungtizenos.com/","name":"Tizen Developer"}]}</script><script id="swp-live-search-client-js-extra">
+var searchwp_live_search_params = [];
+searchwp_live_search_params = {"ajaxurl":"https:\/\/samsungtizenos.com\/wp\/wp-admin\/admin-ajax.php","origin_id":876,"config":{"default":{"engine":"documentation","input":{"delay":300,"min_chars":3},"results":{"position":"bottom","width":"auto","offset":{"x":0,"y":5}},"spinner":false,"parent_el":"[data-search-results-container]"}},"msg_no_config_found":"No valid SearchWP Live Search configuration found!","aria_instructions":"When autocomplete results are available use up and down arrows to review and enter to go to the desired page. Touch device users, explore by touch or with swipe gestures."};;
+</script>
+<script src="/content/mu-plugins/searchwp-live-ajax-search/assets/javascript/dist/script.min.js?ver=1.8.7" data-navigate-once="true"></script>
+            <script src="https://samsungtizenos.com/build/assets/cookie-consent-CVcnwsv_.js" data-navigate-once></script>
+        <script  data-navigate-once="true">window.livewireScriptConfig = {"csrf":"EMsfh9L8ku8ON2fLxp3dppfX6R54zUv4MZYAqoiN","uri":"https:\/\/samsungtizenos.com\/livewire-8c928cd2\/update","moduleUrl":"https:\/\/samsungtizenos.com\/livewire-8c928cd2","progressBar":"","nonce":""};</script>
+        <script src="https://samsungtizenos.com/flux/flux.min.js?id=7a9b5c8b" data-navigate-once></script>
+    </body>
+</html>
+
+<!-- Performance optimized by Redis Object Cache. Learn more: https://wprediscache.com -->

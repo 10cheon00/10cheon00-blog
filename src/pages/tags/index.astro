@@ -1,0 +1,27 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { getAllTags, getPublishedPosts } from '@/lib/posts';
+
+const tags = getAllTags(await getPublishedPosts());
+---
+
+<BaseLayout title="태그 | 10cheon00의 Archive">
+  <section class="container page">
+    <h1>태그</h1>
+    <div class="list">
+      {tags.map((tag) => <a href={`/tags/${encodeURIComponent(tag)}/`}>#{tag}</a>)}
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page {
+    padding: 2.5rem 0 4rem;
+  }
+
+  .list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.7rem;
+  }
+</style>

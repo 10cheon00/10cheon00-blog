@@ -1,0 +1,118 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { getCollection, render } from 'astro:content';
+import { formatDate, getPostDate, getPostDescription, getPostTitle } from '@/lib/posts';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog', ({ data }) => !data.draft);
+  return posts.map((post) => ({
+    params: { slug: post.id.replace(/\/index$/, '') },
+    props: { post }
+  }));
+}
+
+const { post } = Astro.props;
+const { Content, headings } = await render(post);
+const title = getPostTitle(post);
+---
+
+<BaseLayout title={`${title} | 10cheon00의 Archive`} description={getPostDescription(post)}>
+  <article class="container article-grid">
+    <header class="article-header">
+      <a href="/blog/">글 목록</a>
+      <h1>{title}</h1>
+      <div class="meta">
+        <time datetime={getPostDate(post).toISOString()}>{formatDate(getPostDate(post))}</time>
+        {post.data.tags?.map((tag) => <a href={`/tags/${encodeURIComponent(tag)}/`}>#{tag}</a>)}
+      </div>
+    </header>
+    <div class="article-body">
+      <Content />
+    </div>
+    {
+      headings.length ? (
+        <nav class="toc" aria-label="목차">
+          <strong>목차</strong>
+          {headings.filter((heading) => heading.depth <= 3).map((heading) => (
+            <a class={`depth-${heading.depth}`} href={`#${heading.slug}`}>{heading.text}</a>
+          ))}
+        </nav>
+      ) : null
+    }
+  </article>
+</BaseLayout>
+
+<style>
+  .article-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 760px) 240px;
+    gap: 2rem;
+    padding: 2.5rem 0 5rem;
+  }
+
+  .article-header,
+  .article-body {
+    grid-column: 1;
+  }
+
+  .article-header h1 {
+    margin: 0.55rem 0 0;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    line-height: 1.14;
+  }
+
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.55rem 0.8rem;
+    margin-top: 0.9rem;
+    color: var(--muted);
+  }
+
+  .article-body {
+    min-width: 0;
+    font-size: 1.02rem;
+  }
+
+  .article-body :global(h2),
+  .article-body :global(h3) {
+    scroll-margin-top: 92px;
+  }
+
+  .toc {
+    position: sticky;
+    top: 88px;
+    display: flex;
+    flex-direction: column;
+    align-self: start;
+    gap: 0.35rem;
+    max-height: calc(100vh - 120px);
+    overflow: auto;
+    padding-left: 1rem;
+    border-left: 1px solid var(--border);
+    font-size: 0.9rem;
+  }
+
+  .toc strong {
+    margin-bottom: 0.2rem;
+    color: var(--text);
+  }
+
+  .toc a {
+    color: var(--muted);
+  }
+
+  .toc .depth-3 {
+    padding-left: 0.8rem;
+  }
+
+  @media (max-width: 980px) {
+    .article-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .toc {
+      display: none;
+    }
+  }
+</style>

@@ -1,0 +1,72 @@
+---
+interface Props {
+  tags?: string[];
+  categories?: string[];
+}
+
+const { tags = [], categories = [] } = Astro.props;
+---
+
+<aside>
+  <section>
+    <h2>분류</h2>
+    <ul>
+      {categories.map((category) => <li><a href={`/category/${encodeURIComponent(category)}/`}>{category}</a></li>)}
+    </ul>
+  </section>
+  <section>
+    <h2>태그</h2>
+    <div class="tags">
+      {tags.map((tag) => <a href={`/tags/${encodeURIComponent(tag)}/`}>#{tag}</a>)}
+    </div>
+  </section>
+</aside>
+
+<style>
+  aside {
+    position: sticky;
+    top: 88px;
+    padding: 1rem;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--panel);
+  }
+
+  section + section {
+    margin-top: 1.4rem;
+  }
+
+  h2 {
+    margin: 0 0 0.7rem;
+    font-size: 1rem;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  li + li {
+    margin-top: 0.35rem;
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+  }
+
+  .tags a {
+    padding: 0.18rem 0.45rem;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    font-size: 0.88rem;
+  }
+
+  @media (max-width: 860px) {
+    aside {
+      position: static;
+    }
+  }
+</style>
