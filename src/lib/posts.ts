@@ -26,7 +26,12 @@ export function getPostUrl(post: BlogPost) {
 
 export async function getPublishedPosts() {
   const posts = await getCollection('blog', ({ data }) => !data.draft);
-  return posts.sort((a, b) => getPostDate(b).getTime() - getPostDate(a).getTime());
+  return posts.sort((a, b) => {
+    const dateDifference = getPostDate(b).getTime() - getPostDate(a).getTime();
+    if (dateDifference !== 0) return dateDifference;
+
+    return getPostTitle(b).localeCompare(getPostTitle(a), 'ko', { numeric: true });
+  });
 }
 
 export function getAllTags(posts: BlogPost[]) {

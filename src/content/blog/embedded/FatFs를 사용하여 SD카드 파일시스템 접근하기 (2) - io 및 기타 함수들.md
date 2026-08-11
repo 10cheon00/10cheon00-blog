@@ -1,3 +1,11 @@
+---
+title: FatFs를 사용하여 SD카드 파일시스템 접근하기 (2) - io 및 기타 함수들
+date: "2025-07-21T16:50:34+09:00"
+tags: ["embedded"]
+category:
+  name: "Embedded"
+---
+
 # 개발 환경
 
 | 대상 | 버전 |

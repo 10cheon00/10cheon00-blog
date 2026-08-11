@@ -1,3 +1,12 @@
+---
+title: FreeRTOS (0) - RTOS를 쓰는 이유
+date: "2026-06-24"
+updated: "2026-06-23"
+tags: ["freertos"]
+category:
+  name: "FreeRTOS"
+---
+
 
 > [FreeRTOS Documentation - FreeRTOS™](https://www.freertos.org/Documentation/02-Kernel/07-Books-and-manual/01-RTOS_book)
 > 

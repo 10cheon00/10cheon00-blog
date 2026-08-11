@@ -1,3 +1,11 @@
+---
+title: I2S를 사용하여 사인파 출력하기
+date: "2025-08-25T16:36:02+09:00"
+tags: ["embedded"]
+category:
+  name: "Embedded"
+---
+
 # 개발 환경
 
 | 대상 | 버전 |
@@ -235,16 +243,4 @@ github.com\]([https://github.com/10cheon00/STM32-Study/tree/b05b2f6fca48a99c1bd6
 
 [https://lcav.gitbook.io/dsp-labs/passthrough/updating\_stm32\_peripherals](https://lcav.gitbook.io/dsp-labs/passthrough/updating_stm32_peripherals)
 
-\[2.2 Updating peripherals | DSP Labs
-
-Copy2. AUDIO PASSTHROUGH2.2 Updating peripherals The initialization code we generated in the blinking LED example will need to be updated as it does not perform the setup for the two I2S buses we will need for the microphone and the DAC. But first, we will
-
-lcav.gitbook.io\]([https://lcav.gitbook.io/dsp-labs/passthrough/updating\_stm32\_peripherals](https://lcav.gitbook.io/dsp-labs/passthrough/updating_stm32_peripherals))
-
 [https://github.com/rbarreiros/stm32f407\_dds\_i2s\_dma/blob/master/source/src/dds.c](https://github.com/rbarreiros/stm32f407_dds_i2s_dma/blob/master/source/src/dds.c)
-
-\[stm32f407\_dds\_i2s\_dma/source/src/dds.c at master · rbarreiros/stm32f407\_dds\_i2s\_dma
-
-DDS generator using I2S and DAC. Contribute to rbarreiros/stm32f407\_dds\_i2s\_dma development by creating an account on GitHub.
-
-github.com\]([https://github.com/rbarreiros/stm32f407\_dds\_i2s\_dma/blob/master/source/src/dds.c](https://github.com/rbarreiros/stm32f407_dds_i2s_dma/blob/master/source/src/dds.c))

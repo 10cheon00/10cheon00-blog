@@ -1,3 +1,12 @@
+---
+title: FreeRTOS (10) - 태스크 알림
+date: "2026-07-21"
+updated: "2026-07-23"
+tags: ["freertos"]
+category:
+  name: "FreeRTOS"
+---
+
 
 > [FreeRTOS Documentation - FreeRTOS™](https://www.freertos.org/Documentation/02-Kernel/07-Books-and-manual/01-RTOS_book)
 > 

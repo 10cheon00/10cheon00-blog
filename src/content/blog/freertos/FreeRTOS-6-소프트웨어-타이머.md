@@ -1,3 +1,12 @@
+---
+title: FreeRTOS (6) - 소프트웨어 타이머
+date: "2026-07-05"
+updated: "2026-07-06"
+tags: ["freertos"]
+category:
+  name: "FreeRTOS"
+---
+
 
 > [FreeRTOS Documentation - FreeRTOS™](https://www.freertos.org/Documentation/02-Kernel/07-Books-and-manual/01-RTOS_book)
 > 

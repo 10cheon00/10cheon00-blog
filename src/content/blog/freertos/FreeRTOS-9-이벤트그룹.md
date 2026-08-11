@@ -1,3 +1,12 @@
+---
+title: FreeRTOS (9) - 이벤트 그룹
+date: "2026-07-18"
+updated: "2026-07-21"
+tags: ["freertos"]
+category:
+  name: "FreeRTOS"
+---
+
 
 > [FreeRTOS Documentation - FreeRTOS™](https://www.freertos.org/Documentation/02-Kernel/07-Books-and-manual/01-RTOS_book)
 > 

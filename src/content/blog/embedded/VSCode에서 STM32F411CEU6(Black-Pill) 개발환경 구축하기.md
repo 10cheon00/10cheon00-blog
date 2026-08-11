@@ -1,3 +1,11 @@
+---
+title: VSCode에서 STM32F411CEU6(Black-Pill) 개발환경 구축하기
+date: "2026-01-22T16:36:02+09:00"
+tags: ["embedded"]
+category:
+  name: "Embedded"
+---
+
 # 개발 환경
 
 | 대상 | 버전 |

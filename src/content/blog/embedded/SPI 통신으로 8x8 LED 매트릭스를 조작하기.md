@@ -1,3 +1,11 @@
+---
+title: SPI 통신으로 8x8 LED 매트릭스를 조작하기
+date: "2025-06-28T16:36:02+09:00"
+tags: ["embedded"]
+category:
+  name: "Embedded"
+---
+
 # 개발 환경
 
 | 대상 | 버전 |

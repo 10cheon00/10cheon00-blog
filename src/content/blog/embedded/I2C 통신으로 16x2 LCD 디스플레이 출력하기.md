@@ -1,3 +1,11 @@
+---
+title: I2C 통신으로 16x2 LCD 디스플레이 출력하기
+date: "2025-06-30T16:36:02+09:00"
+tags: ["embedded"]
+category:
+  name: "Embedded"
+---
+
 # 개발 환경
 
 | 대상 | 버전 |

@@ -1,3 +1,11 @@
+---
+title: I2S를 사용하여 사인파의 톤과 볼륨 조절하기
+date: "2025-08-25T16:36:02+09:00"
+tags: ["embedded"]
+category:
+  name: "Embedded"
+---
+
 # 개발 환경
 
 | 대상 | 버전 |
