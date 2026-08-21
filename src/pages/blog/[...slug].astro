@@ -1,7 +1,9 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
+import TagChip from '@/components/TagChip.astro';
 import { getCollection, render } from 'astro:content';
 import { formatDate, getPostDate, getPostDescription, getPostTitle } from '@/lib/posts';
+import { withBase } from '@/lib/urls';
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog', ({ data }) => !data.draft);
@@ -19,11 +21,11 @@ const title = getPostTitle(post);
 <BaseLayout title={`${title} | 10cheon00의 Archive`} description={getPostDescription(post)}>
   <article class="container article-grid">
     <header class="article-header">
-      <a href="/blog/">글 목록</a>
+      <a href={withBase('blog/')}>글 목록</a>
       <h1>{title}</h1>
       <div class="meta">
         <time datetime={getPostDate(post).toISOString()}>{formatDate(getPostDate(post))}</time>
-        {post.data.tags?.map((tag) => <a href={`/tags/${encodeURIComponent(tag)}/`}>#{tag}</a>)}
+        {post.data.tags?.map((tag) => <TagChip tag={tag} />)}
       </div>
     </header>
     <div class="article-body">
@@ -50,15 +52,19 @@ const title = getPostTitle(post);
     padding: 2.5rem 0 5rem;
   }
 
-  .article-header,
+  .article-header {
+    grid-column: 1 / -1;
+  }
+
   .article-body {
     grid-column: 1;
   }
 
   .article-header h1 {
     margin: 0.55rem 0 0;
-    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-size: clamp(1.15rem, 4vw, 3.5rem);
     line-height: 1.14;
+    white-space: nowrap;
   }
 
   .meta {

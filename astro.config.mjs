@@ -3,11 +3,10 @@ import sitemap from '@astrojs/sitemap';
 import rehypeKatex from 'rehype-katex';
 import remarkMath from 'remark-math';
 
-const site = process.env.SITE_URL ?? 'https://10cheon00.github.io';
+const site = process.env.SITE_URL ?? 'https://10choen00.xyz';
 
 export default defineConfig({
   site,
-  base: '/astro-blog',
   integrations: [sitemap()],
   markdown: {
     remarkPlugins: [remarkMath],

@@ -1,8 +1,14 @@
 ---
 interface Props {
   tags?: string[];
-  categories?: string[];
+  categories?: Array<{
+    name: string;
+    count: number;
+  }>;
 }
+
+import TagChip from '@/components/TagChip.astro';
+import { withBase } from '@/lib/urls';
 
 const { tags = [], categories = [] } = Astro.props;
 ---
@@ -11,13 +17,21 @@ const { tags = [], categories = [] } = Astro.props;
   <section>
     <h2>카테고리</h2>
     <ul>
-      {categories.map((category) => <li><a href={`/category/${encodeURIComponent(category)}/`}>{category}</a></li>)}
+      {categories.map((category) => (
+        <li>
+          <a href={withBase(`category/${encodeURIComponent(category.name)}/`)}>
+            <span>{category.name}</span>
+            <span class="leader" aria-hidden="true"></span>
+            <span class="count" aria-label={`${category.count}개의 글`}>{category.count}</span>
+          </a>
+        </li>
+      ))}
     </ul>
   </section>
   <section>
     <h2>태그</h2>
     <div class="tags">
-      {tags.map((tag) => <a href={`/tags/${encodeURIComponent(tag)}/`}>#{tag}</a>)}
+      {tags.map((tag) => <TagChip tag={tag} />)}
     </div>
   </section>
 </aside>
@@ -51,17 +65,33 @@ const { tags = [], categories = [] } = Astro.props;
     margin-top: 0.35rem;
   }
 
+  li a {
+    display: flex;
+    width: 100%;
+    min-width: 0;
+    align-items: baseline;
+    gap: 0.35rem;
+  }
+
+  .leader {
+    min-width: 0;
+    flex: 1;
+    align-self: baseline;
+    border-bottom: 2px dotted color-mix(in srgb, var(--muted) 55%, transparent);
+    transform: translateY(-0.22em);
+  }
+
+  .count {
+    flex: none;
+    margin-left: auto;
+    color: var(--muted);
+    font-variant-numeric: tabular-nums;
+  }
+
   .tags {
     display: flex;
     flex-wrap: wrap;
     gap: 0.45rem;
-  }
-
-  .tags a {
-    padding: 0.18rem 0.45rem;
-    border: 1px solid var(--border);
-    border-radius: 999px;
-    font-size: 0.88rem;
   }
 
   @media (max-width: 860px) {

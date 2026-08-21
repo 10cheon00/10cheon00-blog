@@ -3,6 +3,8 @@ interface Props {
   tag: string;
 }
 
+import { withBase } from '@/lib/urls';
+
 const { tag } = Astro.props;
 
 function getTagHue(value: string) {
@@ -18,7 +20,7 @@ const hue = getTagHue(tag);
 
 <a
   class="tag-chip"
-  href={`/tags/${encodeURIComponent(tag)}/`}
+  href={withBase(`tags/${encodeURIComponent(tag)}/`)}
   style={`--tag-hue: ${hue}`}
 >
   #{tag}
@@ -47,17 +49,15 @@ const hue = getTagHue(tag);
     transform: translateY(-1px);
   }
 
-  @media (prefers-color-scheme: dark) {
-    .tag-chip {
-      border-color: hsl(var(--tag-hue) 35% 38%);
-      color: hsl(var(--tag-hue) 55% 78%);
-      background: hsl(var(--tag-hue) 35% 20%);
-    }
+  :global(html[data-theme="dark"]) .tag-chip {
+    border-color: hsl(var(--tag-hue) 35% 38%);
+    color: hsl(var(--tag-hue) 55% 78%);
+    background: hsl(var(--tag-hue) 35% 20%);
+  }
 
-    .tag-chip:hover {
-      border-color: hsl(var(--tag-hue) 48% 55%);
-      color: hsl(var(--tag-hue) 65% 86%);
-      background: hsl(var(--tag-hue) 38% 25%);
-    }
+  :global(html[data-theme="dark"]) .tag-chip:hover {
+    border-color: hsl(var(--tag-hue) 48% 55%);
+    color: hsl(var(--tag-hue) 65% 86%);
+    background: hsl(var(--tag-hue) 38% 25%);
   }
 </style>

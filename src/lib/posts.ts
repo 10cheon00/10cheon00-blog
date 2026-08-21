@@ -1,4 +1,5 @@
 import { getCollection, type CollectionEntry } from 'astro:content';
+import { withBase } from '@/lib/urls';
 
 export type BlogPost = CollectionEntry<'blog'>;
 
@@ -7,7 +8,26 @@ export function getPostTitle(post: BlogPost) {
 }
 
 export function getPostDescription(post: BlogPost) {
-  return post.data.description ?? `${getPostTitle(post)} 글입니다.`;
+  return post.data.description ?? getPostExcerpt(post);
+}
+
+function getPostExcerpt(post: BlogPost) {
+  const excerpt = (post.body ?? '')
+    .replace(/```[\s\S]*?```|~~~[\s\S]*?~~~/g, ' ')
+    .replace(/!\[[^\]]*\]\([^)]*\)/g, ' ')
+    .replace(/\[([^\]]+)\]\([^)]*\)/g, '$1')
+    .replace(/<[^>]+>/g, ' ')
+    .replace(/^\s{0,3}#{1,6}\s+/gm, '')
+    .replace(/^\s*>\s?/gm, '')
+    .replace(/^\s*[-*+]\s+/gm, '')
+    .replace(/[*_`~]/g, '')
+    .replace(/\s+/g, ' ')
+    .trim();
+
+  if (!excerpt) return `${getPostTitle(post)} 글입니다.`;
+  if (excerpt.length <= 150) return excerpt;
+
+  return `${excerpt.slice(0, 150).trimEnd()}…`;
 }
 
 export function getPostDate(post: BlogPost) {
@@ -21,7 +41,7 @@ export function getCategory(post: BlogPost) {
 }
 
 export function getPostUrl(post: BlogPost) {
-  return `/blog/${post.id.replace(/\/index$/, '')}/`;
+  return withBase(`blog/${post.id.replace(/\/index$/, '')}/`);
 }
 
 export async function getPublishedPosts() {

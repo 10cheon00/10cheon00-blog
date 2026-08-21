@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import { getAllCategories, getPublishedPosts } from '@/lib/posts';
+import { withBase } from '@/lib/urls';
 
 const categories = getAllCategories(await getPublishedPosts());
 ---
@@ -9,7 +10,7 @@ const categories = getAllCategories(await getPublishedPosts());
   <section class="container page">
     <h1>카테고리</h1>
     <div class="list">
-      {categories.map((category) => <a href={`/category/${encodeURIComponent(category)}/`}>{category}</a>)}
+      {categories.map((category) => <a href={withBase(`category/${encodeURIComponent(category)}/`)}>{category}</a>)}
     </div>
   </section>
 </BaseLayout>

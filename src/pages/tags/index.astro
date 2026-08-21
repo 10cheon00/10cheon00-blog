@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import { getAllTags, getPublishedPosts } from '@/lib/posts';
+import { withBase } from '@/lib/urls';
 
 const tags = getAllTags(await getPublishedPosts());
 ---
@@ -9,7 +10,7 @@ const tags = getAllTags(await getPublishedPosts());
   <section class="container page">
     <h1>태그</h1>
     <div class="list">
-      {tags.map((tag) => <a href={`/tags/${encodeURIComponent(tag)}/`}>#{tag}</a>)}
+      {tags.map((tag) => <a href={withBase(`tags/${encodeURIComponent(tag)}/`)}>#{tag}</a>)}
     </div>
   </section>
 </BaseLayout>

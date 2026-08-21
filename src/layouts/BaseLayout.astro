@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import 'katex/dist/katex.min.css';
+import { withBase } from '@/lib/urls';
 
 const {
   title = '10cheon00의 Archive',
@@ -15,16 +16,35 @@ const {
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
     <title>{title}</title>
+    <script is:inline>
+      (() => {
+        const systemTheme = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        try {
+          document.documentElement.dataset.theme = localStorage.getItem('theme') ?? systemTheme;
+        } catch {
+          document.documentElement.dataset.theme = systemTheme;
+        }
+      })();
+    </script>
   </head>
   <body>
     <header class="site-header">
       <div class="container header-inner">
-        <a class="brand" href="/">10cheon00의 Archive</a>
+        <a class="brand" href={withBase()}>10cheon00의 Archive</a>
         <nav aria-label="주요 메뉴">
-          <a href="/blog/">글</a>
-          <a href="/tags/">태그</a>
-          <a href="/category/">카테고리</a>
-          <a href="/rss.xml">RSS</a>
+          <a href={withBase('blog/')}>글</a>
+          <a href={withBase('tags/')}>태그</a>
+          <a href={withBase('category/')}>카테고리</a>
+          <a href={withBase('rss.xml')}>RSS</a>
+          <button class="theme-toggle" type="button" aria-label="다크 모드로 전환" aria-pressed="false">
+            <svg class="sun" aria-hidden="true" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="4"></circle>
+              <path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.66 6.34l1.41-1.41"></path>
+            </svg>
+            <svg class="moon" aria-hidden="true" viewBox="0 0 24 24">
+              <path d="M20.5 14.3A8.5 8.5 0 0 1 9.7 3.5 8.5 8.5 0 1 0 20.5 14.3Z"></path>
+            </svg>
+          </button>
         </nav>
       </div>
     </header>
@@ -63,10 +83,52 @@ const {
     flex-wrap: wrap;
     gap: 0.9rem;
     font-size: 0.95rem;
+    align-items: center;
   }
 
   nav a {
     color: var(--muted);
+  }
+
+  .theme-toggle {
+    display: inline-grid;
+    width: 2rem;
+    height: 2rem;
+    padding: 0;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    place-items: center;
+    color: var(--muted);
+    background: var(--panel);
+    cursor: pointer;
+    transition: color 0.15s ease, border-color 0.15s ease, background-color 0.15s ease;
+  }
+
+  .theme-toggle:hover {
+    border-color: var(--accent);
+    color: var(--accent-strong);
+    background: color-mix(in srgb, var(--accent) 10%, var(--panel));
+  }
+
+  .theme-toggle:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+
+  .theme-toggle svg {
+    grid-area: 1 / 1;
+    width: 1rem;
+    height: 1rem;
+    fill: none;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 1.8;
+  }
+
+  :global(html[data-theme="light"]) .moon,
+  :global(html[data-theme="dark"]) .sun {
+    display: none;
   }
 
   @media (max-width: 620px) {
@@ -77,3 +139,29 @@ const {
     }
   }
 </style>
+
+<script>
+  const themeToggle = document.querySelector<HTMLButtonElement>('.theme-toggle');
+
+  function updateThemeButton(theme: string) {
+    if (!themeToggle) return;
+    const isDark = theme === 'dark';
+    themeToggle.setAttribute('aria-pressed', String(isDark));
+    themeToggle.setAttribute('aria-label', isDark ? '라이트 모드로 전환' : '다크 모드로 전환');
+    themeToggle.title = isDark ? '라이트 모드' : '다크 모드';
+  }
+
+  if (themeToggle) {
+    updateThemeButton(document.documentElement.dataset.theme ?? 'light');
+    themeToggle.addEventListener('click', () => {
+      const nextTheme = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+      document.documentElement.dataset.theme = nextTheme;
+      try {
+        localStorage.setItem('theme', nextTheme);
+      } catch {
+        // Storage can be unavailable in restrictive privacy modes.
+      }
+      updateThemeButton(nextTheme);
+    });
+  }
+</script>

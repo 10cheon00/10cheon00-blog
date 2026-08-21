@@ -2,12 +2,15 @@
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import PostCard from '@/components/PostCard.astro';
 import Sidebar from '@/components/Sidebar.astro';
-import { getAllCategories, getAllTags, getPublishedPosts } from '@/lib/posts';
+import { getAllCategories, getAllTags, getCategory, getPublishedPosts } from '@/lib/posts';
 
 const posts = await getPublishedPosts();
 const recentPosts = posts.slice(0, 12);
 const tags = getAllTags(posts);
-const categories = getAllCategories(posts);
+const categories = getAllCategories(posts).map((name) => ({
+  name,
+  count: posts.filter((post) => getCategory(post) === name).length
+}));
 ---
 
 <BaseLayout>
@@ -42,10 +45,10 @@ const categories = getAllCategories(posts);
   }
 
   h1 {
-    max-width: 760px;
     margin: 0;
-    font-size: clamp(2.1rem, 6vw, 4.8rem);
+    font-size: clamp(1.15rem, 5vw, 4.8rem);
     line-height: 1.08;
+    white-space: nowrap;
   }
 
   .summary {
