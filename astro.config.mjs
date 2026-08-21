@@ -3,7 +3,7 @@ import sitemap from '@astrojs/sitemap';
 import rehypeKatex from 'rehype-katex';
 import remarkMath from 'remark-math';
 
-const site = process.env.SITE_URL ?? 'https://www.10cheon00.xyz';
+const site = process.env.SITE_URL ?? 'https://10cheon00.xyz';
 
 export default defineConfig({
   site,
