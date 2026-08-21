@@ -26,7 +26,7 @@ const categories = getAllCategories(posts).map((name) => ({
       <h2>최근 글</h2>
       {recentPosts.map((post) => <PostCard post={post} />)}
     </div>
-    <Sidebar tags={tags} categories={categories} />
+    <Sidebar tags={tags} categories={categories} totalPosts={posts.length} />
   </section>
 </BaseLayout>
 
@@ -34,6 +34,7 @@ const categories = getAllCategories(posts).map((name) => ({
   .intro {
     padding: 4rem 0 3rem;
     border-bottom: 1px solid var(--border);
+    text-align: right;
   }
 
   .eyebrow {
@@ -55,7 +56,7 @@ const categories = getAllCategories(posts).map((name) => ({
 
   .summary {
     max-width: 720px;
-    margin: 1rem 0 0;
+    margin: 1rem 0 0 auto;
     color: var(--muted);
     font-size: 1.08rem;
   }
@@ -67,5 +68,15 @@ const categories = getAllCategories(posts).map((name) => ({
   h2 {
     margin: 0;
     font-size: 1.35rem;
+  }
+
+  @media (max-width: 620px) {
+    .intro {
+      padding: 2.5rem 0 2rem;
+    }
+
+    .content {
+      padding-top: 1.5rem;
+    }
   }
 </style>

@@ -1,6 +1,7 @@
 ---
 interface Props {
   tags?: string[];
+  totalPosts?: number;
   categories?: Array<{
     name: string;
     count: number;
@@ -10,10 +11,14 @@ interface Props {
 import TagChip from '@/components/TagChip.astro';
 import { withBase } from '@/lib/urls';
 
-const { tags = [], categories = [] } = Astro.props;
+const { tags = [], totalPosts = 0, categories = [] } = Astro.props;
 ---
 
 <aside>
+  <a class="all-posts" href={withBase('blog/')}>
+    <span>전체 글 목록</span>
+    <span class="count">{totalPosts}</span>
+  </a>
   <section>
     <h2>카테고리</h2>
     <ul>
@@ -48,6 +53,20 @@ const { tags = [], categories = [] } = Astro.props;
 
   section + section {
     margin-top: 1.4rem;
+  }
+
+  .all-posts {
+    display: flex;
+    width: 100%;
+    min-width: 0;
+    align-items: center;
+    gap: 0.35rem;
+    margin-bottom: 1.5rem;
+    padding: 0.75rem;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    color: var(--text);
+    font-weight: 750;
   }
 
   h2 {
@@ -96,7 +115,7 @@ const { tags = [], categories = [] } = Astro.props;
 
   @media (max-width: 860px) {
     aside {
-      position: static;
+      display: none;
     }
   }
 </style>

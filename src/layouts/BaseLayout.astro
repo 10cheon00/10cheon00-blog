@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import 'katex/dist/katex.min.css';
+import MobileMenu from '@/components/MobileMenu.astro';
 import { withBase } from '@/lib/urls';
 
 const {
@@ -32,10 +33,24 @@ const {
       <div class="container header-inner">
         <a class="brand" href={withBase()}>10cheon00의 Archive</a>
         <nav aria-label="주요 메뉴">
-          <a href={withBase('blog/')}>글</a>
-          <a href={withBase('tags/')}>태그</a>
-          <a href={withBase('category/')}>카테고리</a>
-          <a href={withBase('rss.xml')}>RSS</a>
+          <a class="desktop-nav-link rss-link" href={withBase('rss.xml')} aria-label="RSS 피드" title="RSS 피드">
+            <svg aria-hidden="true" viewBox="0 0 24 24">
+              <circle cx="5" cy="19" r="1.5"></circle>
+              <path d="M4 11a9 9 0 0 1 9 9M4 4a16 16 0 0 1 16 16"></path>
+            </svg>
+          </a>
+          <button
+            class="mobile-menu-toggle"
+            type="button"
+            aria-label="메뉴 열기"
+            aria-expanded="false"
+            aria-controls="mobile-menu"
+            data-mobile-menu-toggle
+          >
+            <svg aria-hidden="true" viewBox="0 0 24 24">
+              <path d="M4 7h16M4 12h16M4 17h16"></path>
+            </svg>
+          </button>
           <button class="theme-toggle" type="button" aria-label="다크 모드로 전환" aria-pressed="false">
             <svg class="sun" aria-hidden="true" viewBox="0 0 24 24">
               <circle cx="12" cy="12" r="4"></circle>
@@ -48,6 +63,7 @@ const {
         </nav>
       </div>
     </header>
+    <MobileMenu />
     <main>
       <slot />
     </main>
@@ -90,7 +106,40 @@ const {
     color: var(--muted);
   }
 
-  .theme-toggle {
+  .rss-link {
+    display: inline-grid;
+    width: 2rem;
+    height: 2rem;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    place-items: center;
+    background: var(--panel);
+    transition: color 0.15s ease, border-color 0.15s ease, background-color 0.15s ease;
+  }
+
+  .rss-link:hover {
+    border-color: var(--accent);
+    color: var(--accent-strong);
+    background: color-mix(in srgb, var(--accent) 10%, var(--panel));
+    text-decoration: none;
+  }
+
+  .rss-link:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+
+  .rss-link svg {
+    width: 1.15rem;
+    height: 1.15rem;
+    fill: currentColor;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-width: 1.8;
+  }
+
+  .theme-toggle,
+  .mobile-menu-toggle {
     display: inline-grid;
     width: 2rem;
     height: 2rem;
@@ -104,18 +153,21 @@ const {
     transition: color 0.15s ease, border-color 0.15s ease, background-color 0.15s ease;
   }
 
-  .theme-toggle:hover {
+  .theme-toggle:hover,
+  .mobile-menu-toggle:hover {
     border-color: var(--accent);
     color: var(--accent-strong);
     background: color-mix(in srgb, var(--accent) 10%, var(--panel));
   }
 
-  .theme-toggle:focus-visible {
+  .theme-toggle:focus-visible,
+  .mobile-menu-toggle:focus-visible {
     outline: 2px solid var(--accent);
     outline-offset: 2px;
   }
 
-  .theme-toggle svg {
+  .theme-toggle svg,
+  .mobile-menu-toggle svg {
     grid-area: 1 / 1;
     width: 1rem;
     height: 1rem;
@@ -131,11 +183,28 @@ const {
     display: none;
   }
 
+  .mobile-menu-toggle {
+    display: none;
+  }
+
+  @media (max-width: 860px) {
+    .desktop-nav-link {
+      display: none;
+    }
+
+    .mobile-menu-toggle {
+      display: inline-grid;
+    }
+  }
+
   @media (max-width: 620px) {
     .header-inner {
-      align-items: flex-start;
-      flex-direction: column;
-      padding: 0.9rem 0;
+      min-height: 58px;
+    }
+
+    nav {
+      flex-wrap: nowrap;
+      gap: 0.55rem;
     }
   }
 </style>

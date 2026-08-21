@@ -1,0 +1,167 @@
+---
+import TagChip from '@/components/TagChip.astro';
+import { getAllCategories, getAllTags, getCategory, getPublishedPosts } from '@/lib/posts';
+import { withBase } from '@/lib/urls';
+
+const posts = await getPublishedPosts();
+const tags = getAllTags(posts);
+const categories = getAllCategories(posts).map((name) => ({
+  name,
+  count: posts.filter((post) => getCategory(post) === name).length
+}));
+---
+
+<button class="backdrop" type="button" aria-label="메뉴 닫기" data-mobile-menu-backdrop></button>
+<aside id="mobile-menu" aria-label="모바일 메뉴" data-mobile-menu>
+  <a class="all-posts" href={withBase('blog/')}>전체 글 목록 <span>{posts.length}</span></a>
+  <section>
+    <h2>카테고리</h2>
+    <ul>
+      {categories.map((category) => (
+        <li>
+          <a href={withBase(`category/${encodeURIComponent(category.name)}/`)}>
+            <span>{category.name}</span>
+            <span class="leader" aria-hidden="true"></span>
+            <span class="count" aria-label={`${category.count}개의 글`}>{category.count}</span>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </section>
+  <section>
+    <h2>태그</h2>
+    <div class="tags">
+      {tags.map((tag) => <TagChip tag={tag} />)}
+    </div>
+  </section>
+</aside>
+
+<style>
+  aside,
+  .backdrop {
+    display: none;
+  }
+
+  @media (max-width: 860px) {
+    aside {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 30;
+      display: block;
+      width: min(24rem, calc(100% - 2rem));
+      padding: 1.25rem;
+      overflow-y: auto;
+      visibility: hidden;
+      border-left: 1px solid var(--border);
+      background: var(--panel);
+      transform: translateX(100%);
+      transition: visibility 0.2s, transform 0.2s ease;
+    }
+
+    aside[data-open] {
+      visibility: visible;
+      transform: translateX(0);
+    }
+
+    .backdrop {
+      position: fixed;
+      inset: 0;
+      z-index: 20;
+      display: block;
+      visibility: hidden;
+      border: 0;
+      opacity: 0;
+      background: color-mix(in srgb, #000 45%, transparent);
+      transition: visibility 0.2s, opacity 0.2s ease;
+    }
+
+    .backdrop[data-open] {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    .all-posts {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.75rem;
+      border: 1px solid var(--border);
+      border-radius: 7px;
+      color: var(--text);
+      font-weight: 750;
+    }
+
+    .all-posts span,
+    .count {
+      color: var(--muted);
+      font-variant-numeric: tabular-nums;
+    }
+
+    section {
+      margin-top: 1.5rem;
+    }
+
+    h2 {
+      margin: 0 0 0.7rem;
+      font-size: 1rem;
+    }
+
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    li + li {
+      margin-top: 0.35rem;
+    }
+
+    li a {
+      display: flex;
+      min-width: 0;
+      align-items: baseline;
+      gap: 0.35rem;
+    }
+
+    .leader {
+      min-width: 0;
+      flex: 1;
+      border-bottom: 2px dotted color-mix(in srgb, var(--muted) 55%, transparent);
+      transform: translateY(-0.22em);
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+    }
+  }
+</style>
+
+<script>
+  const mobileMenu = document.querySelector<HTMLElement>('[data-mobile-menu]');
+  const mobileMenuToggle = document.querySelector<HTMLButtonElement>('[data-mobile-menu-toggle]');
+  const mobileMenuBackdrop = document.querySelector<HTMLButtonElement>('[data-mobile-menu-backdrop]');
+
+  function setMobileMenuOpen(isOpen: boolean) {
+    if (!mobileMenu || !mobileMenuToggle || !mobileMenuBackdrop) return;
+
+    mobileMenu.toggleAttribute('data-open', isOpen);
+    mobileMenuBackdrop.toggleAttribute('data-open', isOpen);
+    mobileMenuToggle.setAttribute('aria-expanded', String(isOpen));
+    mobileMenuToggle.setAttribute('aria-label', isOpen ? '메뉴 닫기' : '메뉴 열기');
+  }
+
+  mobileMenuToggle?.addEventListener('click', () => {
+    setMobileMenuOpen(!mobileMenu?.hasAttribute('data-open'));
+  });
+  mobileMenuBackdrop?.addEventListener('click', () => setMobileMenuOpen(false));
+  mobileMenu?.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => setMobileMenuOpen(false));
+  });
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') setMobileMenuOpen(false);
+  });
+</script>
