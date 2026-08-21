@@ -21,6 +21,12 @@ const blog = defineCollection({
         })
       ])
       .optional(),
+    series: z
+      .object({
+        name: z.string(),
+        order: z.number().int().nonnegative()
+      })
+      .optional(),
     draft: z.boolean().default(false)
   })
 });

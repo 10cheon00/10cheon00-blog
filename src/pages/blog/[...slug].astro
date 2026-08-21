@@ -2,7 +2,7 @@
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import TagChip from '@/components/TagChip.astro';
 import { getCollection, render } from 'astro:content';
-import { formatDate, getPostDate, getPostDescription, getPostTitle } from '@/lib/posts';
+import { formatDate, getPostDate, getPostDescription, getPostTitle, getPostUrl } from '@/lib/posts';
 import { withBase } from '@/lib/urls';
 
 export async function getStaticPaths() {
@@ -16,6 +16,11 @@ export async function getStaticPaths() {
 const { post } = Astro.props;
 const { Content, headings } = await render(post);
 const title = getPostTitle(post);
+const seriesPosts = post.data.series
+  ? (await getCollection('blog', ({ data }) => !data.draft && data.series?.name === post.data.series?.name))
+      .sort((a, b) => (a.data.series?.order ?? 0) - (b.data.series?.order ?? 0))
+  : [];
+const currentSeriesIndex = seriesPosts.findIndex((seriesPost) => seriesPost.id === post.id);
 ---
 
 <BaseLayout title={`${title} | 10cheon00의 Archive`} description={getPostDescription(post)}>
@@ -29,6 +34,40 @@ const title = getPostTitle(post);
       </div>
     </header>
     <div class="article-body">
+      {
+        post.data.series ? (
+          <section class="series" aria-labelledby="series-title">
+            <div class="series-header">
+              <h2 id="series-title">{post.data.series.name} 시리즈</h2>
+              <div class="series-controls">
+                <span>{currentSeriesIndex + 1} / {seriesPosts.length}</span>
+                <button
+                  type="button"
+                  aria-expanded="false"
+                  aria-controls="series-list"
+                  aria-label="시리즈 목록 펼치기"
+                  data-series-toggle
+                >
+                  <span class="toggle-icon" aria-hidden="true">⌃</span>
+                </button>
+              </div>
+            </div>
+            <ol id="series-list" class="series-list" data-series-list hidden>
+              {seriesPosts.map((seriesPost) => {
+                const isCurrent = seriesPost.id === post.id;
+                return (
+                  <li class:list={{ current: isCurrent }}>
+                    <a href={getPostUrl(seriesPost)} aria-current={isCurrent ? 'page' : undefined}>
+                      <span class="series-order">{(seriesPost.data.series?.order ?? 0) + 1}</span>
+                      <span>{getPostTitle(seriesPost)}</span>
+                    </a>
+                  </li>
+                );
+              })}
+            </ol>
+          </section>
+        ) : null
+      }
       <Content />
     </div>
     {
@@ -62,11 +101,120 @@ const title = getPostTitle(post);
     grid-column: 1;
   }
 
+  .series {
+    overflow: hidden;
+    margin-bottom: 2rem;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--panel);
+  }
+
+  .series-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.9rem 1rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .series-header:has(+ .series-list[hidden]) {
+    border-bottom-color: transparent;
+  }
+
+  .series-header h2 {
+    margin: 0;
+    font-size: 1.05rem;
+  }
+
+  .series-controls {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .series-controls > span {
+    color: var(--muted);
+    font-size: 0.88rem;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .series-controls button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    padding: 0.25rem 0.5rem;
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    color: var(--accent-strong);
+    background: transparent;
+    font: inherit;
+    font-size: 0.82rem;
+    cursor: pointer;
+  }
+
+  .series-controls button:hover {
+    border-color: var(--accent);
+    background: color-mix(in srgb, var(--accent) 9%, transparent);
+  }
+
+  .series-controls button:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+
+  .toggle-icon {
+    transition: transform 0.15s ease;
+  }
+
+  .series-controls button[aria-expanded="false"] .toggle-icon {
+    transform: rotate(180deg);
+  }
+
+  .series ol {
+    max-height: 21rem;
+    margin: 0;
+    padding: 0.45rem 0;
+    overflow-y: auto;
+    list-style: none;
+  }
+
+  .series li a {
+    display: flex;
+    align-items: baseline;
+    gap: 0.7rem;
+    padding: 0.42rem 1rem;
+    color: var(--muted);
+    line-height: 1.45;
+  }
+
+  .series li a:hover {
+    color: var(--accent-strong);
+    background: color-mix(in srgb, var(--accent) 8%, transparent);
+    text-decoration: none;
+  }
+
+  .series li.current a {
+    color: var(--accent-strong);
+    background: color-mix(in srgb, var(--accent) 13%, transparent);
+    font-weight: 700;
+  }
+
+  .series-order {
+    min-width: 1.6rem;
+    color: var(--accent);
+    font-size: 0.82rem;
+    font-variant-numeric: tabular-nums;
+    text-align: right;
+  }
+
   .article-header h1 {
+    max-width: 100%;
     margin: 0.55rem 0 0;
     font-size: clamp(1.15rem, 4vw, 3.5rem);
     line-height: 1.14;
-    white-space: nowrap;
+    overflow-wrap: anywhere;
+    word-break: keep-all;
   }
 
   .meta {
@@ -140,6 +288,18 @@ const title = getPostTitle(post);
 </style>
 
 <script>
+  const seriesToggle = document.querySelector<HTMLButtonElement>('[data-series-toggle]');
+  const seriesList = document.querySelector<HTMLOListElement>('[data-series-list]');
+
+  seriesToggle?.addEventListener('click', () => {
+    if (!seriesList) return;
+
+    const isExpanded = seriesToggle.getAttribute('aria-expanded') === 'true';
+    seriesToggle.setAttribute('aria-expanded', String(!isExpanded));
+    seriesToggle.setAttribute('aria-label', isExpanded ? '시리즈 목록 펼치기' : '시리즈 목록 숨기기');
+    seriesList.hidden = isExpanded;
+  });
+
   const tocLinks = [...document.querySelectorAll<HTMLAnchorElement>('[data-toc-link]')];
   const sections = tocLinks
     .map((link) => document.getElementById(decodeURIComponent(link.hash.slice(1))))

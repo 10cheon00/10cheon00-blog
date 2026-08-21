@@ -5,6 +5,9 @@ updated: "2026-06-23"
 tags: ["freertos"]
 category:
   name: "FreeRTOS"
+series:
+  name: "FreeRTOS"
+  order: 0
 ---
 
 
