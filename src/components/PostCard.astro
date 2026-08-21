@@ -1,5 +1,6 @@
 ---
 import type { CollectionEntry } from 'astro:content';
+import TagChip from '@/components/TagChip.astro';
 import { formatDate, getCategory, getPostDate, getPostDescription, getPostTitle, getPostUrl } from '@/lib/posts';
 
 interface Props {
@@ -20,7 +21,7 @@ const { post } = Astro.props;
     post.data.tags?.length ? (
       <div class="tags">
         {post.data.tags.map((tag) => (
-          <a href={`/tags/${encodeURIComponent(tag)}/`}>#{tag}</a>
+          <TagChip tag={tag} />
         ))}
       </div>
     ) : null
@@ -53,5 +54,9 @@ const { post } = Astro.props;
     margin-top: 0.65rem;
     color: var(--muted);
     font-size: 0.92rem;
+  }
+
+  .tags {
+    gap: 0.45rem;
   }
 </style>

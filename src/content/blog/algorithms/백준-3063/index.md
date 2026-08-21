@@ -36,44 +36,44 @@ AABB를 사용하는 문제인데, 보통 AABB는 판별만 하지 영역의 넓
 ```cpp
 #include <stdio.h>
 struct AABB {
-	int b, l;
-	int t, r;
+    int b, l;
+    int t, r;
 };
 int abs(int n) {
-	return n > 0 ? n : -n;
+    return n > 0 ? n : -n;
 }
 int max(int a, int b) {
-	return a > b ? a : b;
+    return a > b ? a : b;
 }
 int min(int a, int b) {
-	return a < b ? a : b;
+    return a < b ? a : b;
 }
 int aabb(AABB* a, AABB* b) {
-	if (a->l > b->r ||
-		a->r < b->l ||
-		a->b > b->t ||
-		a->t < b->b) {
-		return (a->r - a->l) * (a->t - a->b);
-	}
-	AABB res;
-	res.l = max(a->l, b->l);
-	res.b = max(a->b, b->b);
-	res.r = min(a->r, b->r);
-	res.t = min(a->t, b->t);
-	int area = 
+    if (a->l > b->r ||
+        a->r < b->l ||
+        a->b > b->t ||
+        a->t < b->b) {
+        return (a->r - a->l) * (a->t - a->b);
+    }
+    AABB res;
+    res.l = max(a->l, b->l);
+    res.b = max(a->b, b->b);
+    res.r = min(a->r, b->r);
+    res.t = min(a->t, b->t);
+    int area = 
         (a->r-a->l) * (a->t - a->b) - 
         (res.r - res.l) * (res.t - res.b);
-	return area > 0 ? area : 0;
+    return area > 0 ? area : 0;
 };
 int main() {
-	int N;
-	scanf("%d", &N);
-	for (int i = 0; i < N; i++) {
-		AABB a, b;
-		scanf("%d%d%d%d%d%d%d%d",
-			&a.l, &a.b, &a.r, &a.t, &b.l, &b.b, &b.r, &b.t);
-		printf("%d\n", aabb(&a, &b));
-	}
+    int N;
+    scanf("%d", &N);
+    for (int i = 0; i < N; i++) {
+        AABB a, b;
+        scanf("%d%d%d%d%d%d%d%d",
+            &a.l, &a.b, &a.r, &a.t, &b.l, &b.b, &b.r, &b.t);
+        printf("%d\n", aabb(&a, &b));
+    }
 }
 ```
 

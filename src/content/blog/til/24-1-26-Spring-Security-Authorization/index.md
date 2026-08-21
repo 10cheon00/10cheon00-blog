@@ -228,7 +228,7 @@ public class Users implements UserDetails {
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return new ArrayList<Roles>(userRoles);
     }
-	// ...
+    // ...
 ```
 
 Users에서는 `Collection<? extends GrantedAuthority>`를 반환하는 메서드에 ManyToMany로 정의된 userRoles를 반환하도록 작성했다. 왜 ManyToMany로 정의되었냐면, 한 사용자가 여러 권한 또는 여러 역할을 맡을 수 있기 때문이다.

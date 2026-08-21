@@ -121,21 +121,21 @@ WSL HTTP 규칙이 서버에 접근하도록 만드는 포트포워딩 규칙이
 
 ```
 server {
-        listen <포트번호>;
+    listen <포트번호>;
 
-        # 이 밑으로는 테스트를 위해 간단하게 적은 것임
+    # 이 밑으로는 테스트를 위해 간단하게 적은 것임
 
-        root /var/www/html;
-        # Add index.php to the list if you are using PHP
-        index index.html index.htm index.nginx-debian.html;
+    root /var/www/html;
+    # Add index.php to the list if you are using PHP
+    index index.html index.htm index.nginx-debian.html;
 
-        server_name test_server;
+    server_name test_server;
 
-        location / {
-                # First attempt to serve request as file, then
-                # as directory, then fall back to displaying a 404.
-                try_files $uri $uri/ =404;
-        }
+    location / {
+        # First attempt to serve request as file, then
+        # as directory, then fall back to displaying a 404.
+        try_files $uri $uri/ =404;
+    }
 }
 ```
 

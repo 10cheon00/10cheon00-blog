@@ -9,7 +9,7 @@ const { tags = [], categories = [] } = Astro.props;
 
 <aside>
   <section>
-    <h2>분류</h2>
+    <h2>카테고리</h2>
     <ul>
       {categories.map((category) => <li><a href={`/category/${encodeURIComponent(category)}/`}>{category}</a></li>)}
     </ul>

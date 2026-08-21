@@ -55,11 +55,11 @@ Fyweight 클래스의 서브 클래스들은 추상 클래스에 정의된 메�
 ```cpp
 class WoodSword {
 public:
-		WoodSword(int tier):_tier(tier)
-		int getTier();
+    WoodSword(int tier):_tier(tier)
+    int getTier();
 private:
-		Sprite *_sprite;
-		int _tier;
+    Sprite *_sprite;
+    int _tier;
 }
 ```
 
@@ -70,14 +70,14 @@ private:
 ```cpp
 class WoodSwordFactory {
 public:
-		static WoodSword* createWoodSword(int tier) {
-				if(_map.contains(tier) == false){
-						_map[tier] = new WoodSword(tier);
-				}
-				return _map[tier];
-		}
+        static WoodSword* createWoodSword(int tier) {
+                if(_map.contains(tier) == false){
+                        _map[tier] = new WoodSword(tier);
+                }
+                return _map[tier];
+        }
 private:
-		std::Map<int, WoodSword*> _map;
+        std::Map<int, WoodSword*> _map;
 }
 
 class WoodSword {

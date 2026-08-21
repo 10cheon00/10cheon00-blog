@@ -69,50 +69,50 @@ Leaf는 **기본 객체**로, 복합 객체와는 다르게 자식을 관리하�
 
 class Object {
 public:
-		virtual void changeColor() = 0;
-		virtual void changeFont() = 0;
+    virtual void changeColor() = 0;
+    virtual void changeFont() = 0;
 }
 
 /* Composite 클래스 */
 
 class Shape : public Object{
 public:
-		// 자식 객체를 추가하거나 삭제하는 메소드 제공
-		void Add(Object&);
-		void Remove(Object&);
+    // 자식 객체를 추가하거나 삭제하는 메소드 제공
+    void Add(Object&);
+    void Remove(Object&);
 
-		virtual void changeColor() { 
-				/* 모든 자식 도형의 색 바꾸는 연산 */
-		}
-		virtual void changeFont() { 
-				/* 모든 자식 도형의 폰트 바꾸는 연산 */
-		}
+    virtual void changeColor() { 
+        /* 모든 자식 도형의 색 바꾸는 연산 */
+    }
+    virtual void changeFont() { 
+        /* 모든 자식 도형의 폰트 바꾸는 연산 */
+    }
 private:
-		List<Object> children;
+    List<Object> children;
 }
 
 /* Leaf 클래스들 */
 
 class Triangle : public Object{
 public:
-		// Object 인터페이스에 정의된 메소드 구현
-		virtual void changeColor() {
-				// 대충 진짜 색깔 바꾸는 연산
-		}
-		virtual void changeFont() {
-				// 대충 진짜 폰트 바꾸는 연산
-		}
+    // Object 인터페이스에 정의된 메소드 구현
+    virtual void changeColor() {
+        // 대충 진짜 색깔 바꾸는 연산
+    }
+    virtual void changeFont() {
+        // 대충 진짜 폰트 바꾸는 연산
+    }
 }
 
 class Rectangle : public Object {
 public:
-		// Object 인터페이스에 정의된 메소드 구현
-		virtual void changeColor() {
-				// 대충 진짜 색깔 바꾸는 연산
-		}
-		virtual void changeFont() {
-				// 대충 진짜 폰트 바꾸는 연산
-		}
+    // Object 인터페이스에 정의된 메소드 구현
+    virtual void changeColor() {
+        // 대충 진짜 색깔 바꾸는 연산
+    }
+    virtual void changeFont() {
+        // 대충 진짜 폰트 바꾸는 연산
+    }
 }
 ```
 

@@ -20,16 +20,16 @@ category:
 ```cpp
 #include <stdio.h>
 int main() {
-	int a, b, c, d, e, f;
-	scanf("%d%d%d%d%d%d", &a, &b, &c, &d, &e, &f);
-	for (int y = -999; y < 1000; y++) {
-		for (int x = -999; x < 1000; x++) {
-			if (a * x + b * y == c && d * x + e * y == f) {
-				printf("%d %d", x, y);
-				return 0;
-			}
-		}
-	}
+    int a, b, c, d, e, f;
+    scanf("%d%d%d%d%d%d", &a, &b, &c, &d, &e, &f);
+    for (int y = -999; y < 1000; y++) {
+        for (int x = -999; x < 1000; x++) {
+            if (a * x + b * y == c && d * x + e * y == f) {
+                printf("%d %d", x, y);
+                return 0;
+            }
+        }
+    }
 }
 ```
 
@@ -83,9 +83,9 @@ $$
 ```cpp
 #include <stdio.h>
 int main() {
-	int a, b, c, d, e, f;
-	scanf("%d%d%d%d%d%d", &a, &b, &c, &d, &e, &f);
-	printf("%d %d", 
+    int a, b, c, d, e, f;
+    scanf("%d%d%d%d%d%d", &a, &b, &c, &d, &e, &f);
+    printf("%d %d", 
         (e*c-b*f)/(a*e - b*d), 
         (-d*c+a*f)/(a*e - b*d));
 }

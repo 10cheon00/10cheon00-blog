@@ -34,7 +34,7 @@ const title = getPostTitle(post);
         <nav class="toc" aria-label="목차">
           <strong>목차</strong>
           {headings.filter((heading) => heading.depth <= 3).map((heading) => (
-            <a class={`depth-${heading.depth}`} href={`#${heading.slug}`}>{heading.text}</a>
+            <a class={`depth-${heading.depth}`} href={`#${heading.slug}`} data-toc-link>{heading.text}</a>
           ))}
         </nav>
       ) : null
@@ -99,11 +99,25 @@ const title = getPostTitle(post);
   }
 
   .toc a {
+    margin-left: -1rem;
+    padding: 0.22rem 0.45rem 0.22rem 0.9rem;
+    border-left: 3px solid transparent;
+    border-radius: 0 5px 5px 0;
     color: var(--muted);
+    line-height: 1.45;
+    transition: color 0.15s ease, border-color 0.15s ease, background-color 0.15s ease;
+  }
+
+  .toc a[aria-current="location"] {
+    border-left-color: var(--accent);
+    color: var(--accent-strong);
+    background: color-mix(in srgb, var(--accent) 12%, transparent);
+    font-weight: 700;
+    text-decoration: none;
   }
 
   .toc .depth-3 {
-    padding-left: 0.8rem;
+    padding-left: 1.7rem;
   }
 
   @media (max-width: 980px) {
@@ -116,3 +130,38 @@ const title = getPostTitle(post);
     }
   }
 </style>
+
+<script>
+  const tocLinks = [...document.querySelectorAll<HTMLAnchorElement>('[data-toc-link]')];
+  const sections = tocLinks
+    .map((link) => document.getElementById(decodeURIComponent(link.hash.slice(1))))
+    .filter((section): section is HTMLElement => section !== null);
+
+  function highlightCurrentSection() {
+    if (!sections.length) return;
+
+    const readingLine = 112;
+    let currentSection = sections[0];
+
+    for (const section of sections) {
+      if (section.getBoundingClientRect().top <= readingLine) currentSection = section;
+      else break;
+    }
+
+    for (const link of tocLinks) {
+      const isCurrent = decodeURIComponent(link.hash.slice(1)) === currentSection.id;
+      if (isCurrent) link.setAttribute('aria-current', 'location');
+      else link.removeAttribute('aria-current');
+    }
+  }
+
+  let frameId = 0;
+  function scheduleHighlight() {
+    cancelAnimationFrame(frameId);
+    frameId = requestAnimationFrame(highlightCurrentSection);
+  }
+
+  highlightCurrentSection();
+  document.addEventListener('scroll', scheduleHighlight, { passive: true });
+  window.addEventListener('resize', scheduleHighlight);
+</script>

@@ -60,16 +60,16 @@ Element 서브 클래스에서 `Accept()` 메서드를 구현한다. 이 때 방
 // 대충 금괴와 부동산을 클래스로 나타내면,
 class GoldBar {
 public:
-		int getPrice() { return _price; }
+    int getPrice() { return _price; }
 private:
-		int _price;
+    int _price;
 }
 
 class Estate {
 public:
-		int getPrice() { return _price; }
+    int getPrice() { return _price; }
 private:
-		int _price;
+    int _price;
 }
 ```
 
@@ -85,36 +85,36 @@ private:
 // 가치(price)를 공통으로 가진다.
 class Asset {
 public:
-		// 인자로 전달된 방문자에게 자기 자신을 전달한다.
-		// 방문자의 알고리즘을 실행할 때 데이터 객체가 필요하기 때문이다.
-		virtual void Visit(Visitor& visitor) = 0;
+    // 인자로 전달된 방문자에게 자기 자신을 전달한다.
+    // 방문자의 알고리즘을 실행할 때 데이터 객체가 필요하기 때문이다.
+    virtual void Visit(Visitor& visitor) = 0;
 
-		int getPrice() { return _price; }
+    int getPrice() { return _price; }
 protected:
-		// 생성자를 숨겨 추상 클래스임을 나타낸다.
-		Asset(int price) : _price(price) { }
+    // 생성자를 숨겨 추상 클래스임을 나타낸다.
+    Asset(int price) : _price(price) { }
 private:
-		int _price;
+    int _price;
 }
 
 class GoldBar : public Asset {
 public:
-		GoldBar(int price) : Asset(price) { }
+    GoldBar(int price) : Asset(price) { }
 
-		virtual void Visit(Visitor& visitor) {
-				// Asset 자신을 인자로 넘겨줘 방문자에서 알고리즘을 수행하도록 함.
-				visitor.VisitAsset(this); 
-		}
+    virtual void Visit(Visitor& visitor) {
+        // Asset 자신을 인자로 넘겨줘 방문자에서 알고리즘을 수행하도록 함.
+        visitor.VisitAsset(this); 
+    }
 }
 
 class Estate : public Asset {
 public:
-		Estate(int price) : Asset(price) { }
+    Estate(int price) : Asset(price) { }
 
-		virtual void Visit(Visitor& visitor) {
-				// Asset 자신을 인자로 넘겨줘 방문자에서 알고리즘을 수행하도록 함.
-				visitor.VisitAsset(this);
-		}
+    virtual void Visit(Visitor& visitor) {
+        // Asset 자신을 인자로 넘겨줘 방문자에서 알고리즘을 수행하도록 함.
+        visitor.VisitAsset(this);
+    }
 }
 ```
 
@@ -123,26 +123,26 @@ public:
 ```cpp
 class Visitor {
 public:
-		virtual void VisitAsset(Asset& asset) = 0;
+    virtual void VisitAsset(Asset& asset) = 0;
 protected:
-		Visitor();
+    Visitor();
 }
 
 class PriceVisitor : public Visitor {
 public:
-		PriceVisitor() {
-				_totalPrice = 0;
-		}
+    PriceVisitor() {
+        _totalPrice = 0;
+    }
 
-		// 알고리즘.
-		// 전달된 객체의 가치를 totalPrice에 더한다.
-		virtual void VisitAsset(Asset& asset) {
-				_totalPrice += asset.getPrice();
-		}
+    // 알고리즘.
+    // 전달된 객체의 가치를 totalPrice에 더한다.
+    virtual void VisitAsset(Asset& asset) {
+        _totalPrice += asset.getPrice();
+    }
 
-		int getTotalPrice() { return _totalPrice; }
+    int getTotalPrice() { return _totalPrice; }
 private:
-		int _totalPrice;
+    int _totalPrice;
 }
 ```
 
@@ -162,9 +162,9 @@ assetList->push_back(new Estate(10000));
 // 여기서는 반복자가 담당하는 코드로 구현했다.
 
 for(auto iter = assetList->begin(); iter != assetList->end(); iter++) {
-		iter->visit(priceVisitor);
-		// 각 asset 객체의 visit함수에는 인자로 받은 visitor에게 
-		// 자기 자신을 넘겨 알고리즘을 수행하도록 하고 있다.
+    iter->visit(priceVisitor);
+    // 각 asset 객체의 visit함수에는 인자로 받은 visitor에게 
+    // 자기 자신을 넘겨 알고리즘을 수행하도록 하고 있다.
 }
 
 printf("total price : %d", priceVisitor.getTotalPrice());
@@ -185,10 +185,10 @@ printf("total price : %d", priceVisitor.getTotalPrice());
 ```cpp
 class Bitcoin {
 public:
-		Bitcoin(int price) : _price(price) { }
-		int getPrice() { return _price; }
+    Bitcoin(int price) : _price(price) { }
+    int getPrice() { return _price; }
 private:
-		int _price;
+    int _price;
 }
 ```
 
@@ -199,30 +199,30 @@ private:
 ```cpp
 class Visitor {
 public:
-		virtual void VisitAsset(Asset& asset) = 0;
-		virtual void VisitBitcoin(Bitcoin& bitcoin) = 0;
+    virtual void VisitAsset(Asset& asset) = 0;
+    virtual void VisitBitcoin(Bitcoin& bitcoin) = 0;
 protected:
-		Visitor();
+    Visitor();
 }
 
 class PriceVisitor : public Visitor {
 public:
-		PriceVisitor() {
-				_totalPrice = 0;
-		}
+    PriceVisitor() {
+        _totalPrice = 0;
+    }
 
-		// 알고리즘.
-		// 전달된 객체의 가치를 totalPrice에 더한다.
-		virtual void VisitAsset(Asset& asset) {
-				_totalPrice += asset.getPrice();
-		}
-		virtual void VisitBitcoin(Bitcoin& bitcoin) {
-				_totalPrice += bitcoin.getPrice();
-		}
+    // 알고리즘.
+    // 전달된 객체의 가치를 totalPrice에 더한다.
+    virtual void VisitAsset(Asset& asset) {
+        _totalPrice += asset.getPrice();
+    }
+    virtual void VisitBitcoin(Bitcoin& bitcoin) {
+        _totalPrice += bitcoin.getPrice();
+    }
 
-		int getTotalPrice() { return _totalPrice; }
+    int getTotalPrice() { return _totalPrice; }
 private:
-		int _totalPrice;
+    int _totalPrice;
 }
 ```
 
@@ -238,7 +238,7 @@ assetList->push_back(new Estate(10000));
 Bitcoin bitcoin(2500);
 
 for(auto iter = assetList->begin(); iter != assetList->end(); iter++) {
-		iter->visit(priceVisitor);
+    iter->visit(priceVisitor);
 }
 // 비트코인의 가치를 구한다.
 bitcoin.visit(priceVisitor);

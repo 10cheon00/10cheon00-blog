@@ -166,7 +166,7 @@ BaseType_t xSemaphoreGiveFromISR(
 `xSemaphoreGiveFromISR()`은 `xSemaphoreGive()`를 ISR에서 사용할 수 있도록 만든 함수다. 실제 매크로 정의를 봐도 아래와 같다.
 
 ```c
-#define xSemaphoreGiveFromISR( xSemaphore, pxHigherPriorityTaskWoken )	xQueueGiveFromISR( ( QueueHandle_t ) ( xSemaphore ), ( pxHigherPriorityTaskWoken ) )
+#define xSemaphoreGiveFromISR( xSemaphore, pxHigherPriorityTaskWoken )    xQueueGiveFromISR( ( QueueHandle_t ) ( xSemaphore ), ( pxHigherPriorityTaskWoken ) )
 ```
 
 - `xSemaphore` : 반환하려는 세마포어 핸들

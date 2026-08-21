@@ -59,12 +59,12 @@ Spring은 미리 구현된 `Filter`를 실행할 뿐만 아니라 다른 모듈�
 
 ```java
 public interface AuthenticationManager {
-	/**
-	 * @param authentication the authentication request object
-	 * @return a fully authenticated object including credentials
-	 * @throws AuthenticationException if authentication fails
-	 */
-	Authentication authenticate(Authentication authentication) throws AuthenticationException;
+    /**
+     * @param authentication the authentication request object
+     * @return a fully authenticated object including credentials
+     * @throws AuthenticationException if authentication fails
+     */
+    Authentication authenticate(Authentication authentication) throws AuthenticationException;
 }
 ```
 

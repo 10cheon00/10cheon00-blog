@@ -1,0 +1,63 @@
+---
+interface Props {
+  tag: string;
+}
+
+const { tag } = Astro.props;
+
+function getTagHue(value: string) {
+  let hash = 0;
+  for (const character of value) {
+    hash = (hash * 31 + character.codePointAt(0)!) >>> 0;
+  }
+  return hash % 360;
+}
+
+const hue = getTagHue(tag);
+---
+
+<a
+  class="tag-chip"
+  href={`/tags/${encodeURIComponent(tag)}/`}
+  style={`--tag-hue: ${hue}`}
+>
+  #{tag}
+</a>
+
+<style>
+  .tag-chip {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.18rem 0.58rem;
+    border: 1px solid hsl(var(--tag-hue) 42% 70%);
+    border-radius: 999px;
+    color: hsl(var(--tag-hue) 48% 30%);
+    background: hsl(var(--tag-hue) 55% 92%);
+    font-size: 0.84rem;
+    font-weight: 650;
+    line-height: 1.45;
+    transition: border-color 0.15s ease, background-color 0.15s ease, transform 0.15s ease;
+  }
+
+  .tag-chip:hover {
+    border-color: hsl(var(--tag-hue) 48% 54%);
+    color: hsl(var(--tag-hue) 55% 24%);
+    background: hsl(var(--tag-hue) 60% 87%);
+    text-decoration: none;
+    transform: translateY(-1px);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .tag-chip {
+      border-color: hsl(var(--tag-hue) 35% 38%);
+      color: hsl(var(--tag-hue) 55% 78%);
+      background: hsl(var(--tag-hue) 35% 20%);
+    }
+
+    .tag-chip:hover {
+      border-color: hsl(var(--tag-hue) 48% 55%);
+      color: hsl(var(--tag-hue) 65% 86%);
+      background: hsl(var(--tag-hue) 38% 25%);
+    }
+  }
+</style>

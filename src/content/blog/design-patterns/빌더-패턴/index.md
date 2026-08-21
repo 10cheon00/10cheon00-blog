@@ -190,9 +190,9 @@ public class Book {
 
 ```java
 Book book = Book.Builder("1234567890", "1900-01-01")
-	.price(15000)
-	.author("Kim")
-	.build();
+    .price(15000)
+    .author("Kim")
+    .build();
 ```
 
 객체 내부의 값을 바로 대입하지 않고 빌더에 저장한 다음 build()를 호출해야만 실제 객체를 반환받는 형태다. 체이닝 기법을 사용해서 단계적으로 객체를 생성한다.

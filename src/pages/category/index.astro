@@ -5,9 +5,9 @@ import { getAllCategories, getPublishedPosts } from '@/lib/posts';
 const categories = getAllCategories(await getPublishedPosts());
 ---
 
-<BaseLayout title="분류 | 10cheon00의 Archive">
+<BaseLayout title="카테고리 | 10cheon00의 Archive">
   <section class="container page">
-    <h1>분류</h1>
+    <h1>카테고리</h1>
     <div class="list">
       {categories.map((category) => <a href={`/category/${encodeURIComponent(category)}/`}>{category}</a>)}
     </div>
