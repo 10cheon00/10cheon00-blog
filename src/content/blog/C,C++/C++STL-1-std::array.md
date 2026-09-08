@@ -1,9 +1,9 @@
 ---
 title: C++ STL (1) - std::array
 date: "2026-09-08T12:23:33+0900"
-tags: ["C,C++"]
+tags: ["C,C++", "STL"]
 category:
-  name: "C,C++", "C++ STL"
+  name: "C,C++"
 series:
   name: "C++ STL"
   order: 1
