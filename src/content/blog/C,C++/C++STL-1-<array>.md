@@ -1,5 +1,5 @@
 ---
-title: C++ STL (1) - std::array
+title: C++ STL (1) - <array>
 date: "2026-09-08T12:23:33+0900"
 tags: ["C,C++", "STL"]
 category:
@@ -8,6 +8,8 @@ series:
   name: "C++ STL"
   order: 1
 ---
+
+> C++ 17을 기준으로 cppreference를 참고하여 작성했습니다.
 
 # std::array
 
