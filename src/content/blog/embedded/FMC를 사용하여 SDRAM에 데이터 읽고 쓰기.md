@@ -99,7 +99,7 @@ SDRAM을 쓰기 위해 설정해야할 곳은 FMC랑 MPU다.
 
 - **Clock and chip enable**
 
-  개발보드 핀아웃을 참고하였을 때 SDRAM 1의 Bank 1을 써야 한다. FMC_SDCKE0과 FMC_SDNE0을 쓴다고 명시되어 있다. 따라서 `SDCKE0 + SDNE0`을 선택한다.
+  개발 보드 핀아웃을 참고하였을 때 SDRAM 1의 Bank 1을 써야 한다. FMC_SDCKE0과 FMC_SDNE0을 쓴다고 명시되어 있다. 따라서 `SDCKE0 + SDNE0`을 선택한다.
 
 - **Internal bank number**
 
@@ -183,6 +183,12 @@ SDRAM을 쓰기 위해 설정해야할 곳은 FMC랑 MPU다.
 
   정확한 값을 알아보기보다는 SDRAM을 테스트하는 것이 목적이어서 전부 기본값으로 두었다.
 
+### GPIO 변경
+
+개발 보드 데이터 시트에는 FMC_SDCKE0 GPIO와 FMC_SDNE0 GPIO가 각각 PH2, PH3으로 되어 있다. 그러나 CubeMX에서 FMC를 활성화하면 각각 PC2, PC3으로 설정되어 버린다. 그러므로 사진처럼 GPIO를 변경한다.
+
+![alt text](assets/fmc-gpio-modify.png)
+
 ## MPU 설정
 
 FMC를 통해 SDRAM에 접근하면 AXI 트랜잭션이 발생한다. 이 말은 내부 버스를 통해 메모리를 읽고 쓴다는 것을 의미한다.
@@ -256,6 +262,7 @@ static HAL_SDRAM_StateTypeDef SDRAM_Init(void) {
   };
 
   // 1. Start Clock 명령 전송
+  command.CommandMode = FMC_SDRAM_CMD_CLK_ENABLE;
   if (HAL_SDRAM_SendCommand(&hsdram1, &command, timeout) != HAL_OK) {
     return HAL_SDRAM_STATE_ERROR;
   }
@@ -278,6 +285,7 @@ static HAL_SDRAM_StateTypeDef SDRAM_Init(void) {
 
   // 5. LoadMode 명령 전송
   command.CommandMode = FMC_SDRAM_CMD_LOAD_MODE;
+  command.AutoRefreshNumber = 1;
   command.ModeRegisterDefinition = 0x30 |  // Latency Mode bitset   = 011
                                    0x0 |   // Burst Type bit        = 0
                                    0x0;    // Burst Length bitset   = 000
@@ -293,6 +301,14 @@ static HAL_SDRAM_StateTypeDef SDRAM_Init(void) {
   return HAL_SDRAM_STATE_READY;
 }
 ```
+
+LoadMode 명령을 전송할 때 `ModeRegisterDefinition` 값을 전달해야한다. 
+
+![alt text](assets/mode-register-definition.png)
+
+SDRAM 데이터 시트에는 위와 같이 만드는 방법을 알려준다. 여기서 생각해야될건 Burst Length 설정, Latency Mode를 CubeMX에서 설정한 값과 일치시키는 것이다. 
+
+CAS Latency를 `3 memory clock cycles`로 설정했고, 초기화 절차에서 Burst Length를 `1`로 설정하라 했으므로 `0x30`을 전달하면 된다. Burst Type에 대해서는 잘 모르겠다만, 어차피 Burst Length가 1개이므로 한 번 가져올 때 1개만 갖고 오기 때문에 어떤 값으로 설정하든 상관없다.
 
 ## 읽기/쓰기
 
