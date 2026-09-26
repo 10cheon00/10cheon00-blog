@@ -17,6 +17,7 @@
     "@astrojs/markdown-remark": "^7.2.1",
     "@astrojs/rss": "latest",
     "@astrojs/sitemap": "latest",
+    "@openai/codex": "^0.157.1",
     "astro": "latest",
     "katex": "latest",
     "rehype-katex": "latest",
